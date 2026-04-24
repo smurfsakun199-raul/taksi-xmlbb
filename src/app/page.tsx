@@ -1,6 +1,4 @@
-import { h3 } from "framer-motion/client";
 import HeaderTolol from "./components/Header";
-import SectionUpImage from "./components/RepresImage";
 
 import {
     Circle,
