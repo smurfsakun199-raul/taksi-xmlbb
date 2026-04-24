@@ -1,24 +1,16 @@
 import HeaderTolol from "./components/Header";
 
 import {
-    Circle,
     Compass,
-    Hash,
     ChartNoAxesCombined,
     Dna,
     Code,
-    Fan,
     CodeXml,
     Palette,
     Library,
-    Layers2,
     Layers,
     LayersPlus,
-    PaintBucket,
-    Radar,
     Road,
-    Sun,
-    Moon,
     Sparkles,
     Star,
     ShieldCheck,
@@ -175,7 +167,7 @@ export default function AlahBacot() {
                             </div>
                             <div className="flex pad-btm-20px">
                                 <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
-                                    <h2 className="font-size-16px flex align-itm-c gap-10px"><CodeXml /> Code</h2>
+                                    <h2 className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</h2>
                                 </div>
                             </div>
                             <div className="grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">

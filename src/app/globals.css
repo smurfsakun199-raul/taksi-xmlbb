@@ -7,49 +7,12 @@
   --bcb: rgb(42, 99, 206), rgb(36, 189, 209), #6366f1;
   --purple: #a855f7;
   --pink: #ec4899;
-  --bg-blur-card: #e1e1e114;
-  --bg-blur-card-1: #cfcfcf3b;
   --bg-blue: rgb(42, 99, 206);
   --bg-pink: rgb(218, 43, 209);
   --bg-cyan: rgb(36, 189, 209);
   --bg-blue-old: #2437d1;
   --bg-purple: rgb(128, 36, 204);
-  --bg: white;
-  --bg-dark: black;
-  --bg-dark-op: rgba(255, 255, 255, 0.3);
-  --bg-white: black;
-  --bg-white-op: rgba(0, 0, 0, 0.3);
-  --bg-circle-blue: #5387d84d;
-  --clr: black;
-  --p: rgba(0, 0, 0, 0.7);
-  --br: black;
-  --br-op: rgba(0, 0, 0, 0.14);
 
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  box-sizing: border-box;
-  background: var(--bg);
-  color: var(--clr);
-  font-family: 'Inter',
-    "Comic Sans MS",
-    "Comic Sans",
-    ui-sans-serif,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
-  overflow-x: hidden;
-  transition: background 0.6s ease-in-out;
-}
-
-body.dark {
   --bg: black;
   --bg-blur-card: #7373733b;
   --bg-blur-card-1: #cfcfcf3b;
@@ -62,6 +25,48 @@ body.dark {
   --p: rgba(255, 255, 255, 0.7);
   --br: white;
   --br-op: rgba(255, 255, 255, 0.14);
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background: var(--bg);
+  color: var(--clr);
+  font-family: 'Inter',
+    ui-sans-serif,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background 0.6s ease-in-out;
+}
+
+body.light {
+  --bg: white;
+  --bg-blur-card: #e1e1e114;
+  --bg-blur-card-1: #cfcfcf3b;
+  --bg-dark: black;
+  --bg-dark-op: rgba(255, 255, 255, 0.3);
+  --bg-white: black;
+  --bg-white-op: rgba(0, 0, 0, 0.3);
+  --bg-circle-blue: #5387d84d;
+  --clr: black;
+  --p: rgba(0, 0, 0, 0.7);
+  --br: black;
+  --br-op: rgba(0, 0, 0, 0.14);
 }
 
 @layer utilities {
@@ -154,6 +159,11 @@ body.dark {
     background: var(--bg-cyan);
     top: 0;
     right: 0;
+  }
+
+  .sec-visible {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
   }
 
   /* --- Custom Style --- */
@@ -304,6 +314,10 @@ body.dark {
     padding: 8px 18px;
   }
 
+  .pad-10-24px {
+    padding: 10px 24px;
+  }
+
   .pad-10px {
     padding: 10px;
   }
@@ -375,7 +389,6 @@ body.dark {
     border: 1px solid var(--br-op);
     border-radius: 12px;
     backdrop-filter: blur(12px);
-    transition: 0.3s ease-in-out;
   }
 
   .card-hover,
@@ -384,7 +397,8 @@ body.dark {
     border: 1px solid var(--br-op);
     border-radius: 12px;
     backdrop-filter: blur(12px);
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    will-change: transform, box-shadow;
   }
 
   .card-large {
@@ -405,7 +419,8 @@ body.dark {
   }
 
   .hover-after-effect {
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    will-change: transform, box-shadow;
     transform: translateZ(0);
     position: relative;
   }
@@ -424,7 +439,7 @@ body.dark {
     bottom: -24px;
     background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%, var(--bg) 200%);
     transform: translateX(50%);
-    transition: 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
   }
 
   .hover-after-effect:hover::after {
@@ -645,7 +660,8 @@ body.dark {
 
   .icn-item-svg a {
     position: relative;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    will-change: transform, box-shadow;
   }
 
   .icn-item-svg a::after {
@@ -657,6 +673,7 @@ body.dark {
     bottom: -2px;
     background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%, var(--bg) 200%);
     transform: translateX(50%);
+    will-change: transform;
     transition: 0.3s ease-in-out;
   }
 

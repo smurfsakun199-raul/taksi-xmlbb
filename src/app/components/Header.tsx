@@ -49,23 +49,23 @@ const lisItemLinkBacot = [
 export default function Header() {
     const [isDark, setIsDark] = useState(() => {
         if (typeof window !== 'undefined') {
-            return localStorage.getItem('theme') || 'light'
+            return localStorage.getItem('theme') || 'dark'
         }
-        return 'light'
+        return 'dark'
     })
 
     useEffect(() => {
-        if (isDark === 'dark') {
-            document.body.classList.add('dark');
+        if (isDark === 'light') {
+            document.body.classList.add('light');
         } else {
-            document.body.classList.remove('dark');
+            document.body.classList.remove('light');
         }
 
         localStorage.setItem('theme', isDark);
     }, [isDark]);
 
     const toggleThemesMode = () => {
-        setIsDark(prev => prev === 'light' ? 'dark' : 'light');
+        setIsDark(prev => prev === 'dark' ? 'light' : 'dark');
     }
 
     return (
@@ -81,17 +81,17 @@ export default function Header() {
                             <p className="font-size-12px">Animasi yang biasa</p>
                         </div>
                     </div>
-                    <div className="icn-item-svg flex jus-c-c align-itm-c gap-20px">
+                    <div className="icn-item-svg flex jus-c-c align-itm-c gap-20px pad-10-24px outline-op bg-blur-card br-radius-12px">
                         {lisItemLinkBacot.map((item) => (
                             <Link key={item.id} href={item.link}>{item.icon}{item.name}</Link>
                         ))}
                     </div>
                     <div>
                         <button onClick={toggleThemesMode} className="icn-svg-theme flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
-                            {isDark === 'dark' ? (
-                                <><Moon /> Darkz</>
-                            ) : (
+                            {isDark === 'light' ? (
                                 <><Sun /> Light</>
+                            ) : (
+                                <><Moon /> Darkz</>
                             )}
                         </button>
                     </div>
