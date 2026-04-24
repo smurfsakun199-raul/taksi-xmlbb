@@ -17,31 +17,31 @@ const lisItemLinkBacot = [
     {
         id: 1,
         icon: <House />,
-        link: 'blog',
+        link: '/',
         name: 'Home'
     },
     {
         id: 2,
         icon: <Layers2 />,
-        link: 'bacot1',
+        link: '/',
         name: 'Collections'
     },
     {
         id: 3,
         icon: <PaintBucket />,
-        link: 'bacot2',
+        link: '/',
         name: 'Style'
     },
     {
         id: 4,
         icon: <WandSparkles />,
-        link: 'bacot3',
+        link: '/',
         name: 'Experiments'
     },
     {
         id: 5,
         icon: <Info />,
-        link: 'bacot4',
+        link: '/',
         name: 'About'
     }
 ];

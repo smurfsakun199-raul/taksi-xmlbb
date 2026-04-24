@@ -57,7 +57,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  transition: background 0.6s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
 body.light {

@@ -67,22 +67,21 @@ const fokusBacotList = [
 const lolList = [
     {
         id: 1,
-        title: 'WorkFlow',
-        icon_1: <TrendingUpDown />,
-        icon_2: <ShieldCheck />,
-        icon_3: <ChartNoAxesCombined />,
-        name_1: 'Optimization',
-        name_2: 'Security Self',
-        name_3: 'Up Performance',
-        desc_1: 'Optimisasi yang diusahakan',
-        desc_2: 'Keamanan yang belum terjamin baik',
-        desc_3: 'Sedikit peningkatan harapan'
+        icon: <TrendingUpDown />,
+        name: 'Optimization',
+        desc: 'Optimisasi yang diusahakan'
     },
     {
         id: 2,
-        title: 'FlowWork',
-        icon_1: <Dna />,
-        desc_1: 'Penempatan posisi yang Ideal dalam repetisi dibalik kata tiap kalimat yang menjadikan paragraf deskripsi ini berisi namun berulang.'
+        icon: <ShieldCheck />,
+        name: 'Security Self',
+        desc: 'Keamanan yang belum terjamin baik'
+    },
+    {
+        id: 3,
+        icon: <ChartNoAxesCombined />,
+        name: 'Up Performance',
+        desc: 'Sedikit peningkatan harapan'
     }
 ];
 
@@ -215,19 +214,21 @@ export default function AlahBacot() {
                                     </div>
                                 </div>
                                 <div className="grid grid-temp-clm-r2 jus-c-c align-itm-inherit gap-10px pad-top-10px">
-                                    {lolList.map((item) => (
-                                        <div key={item.id} className="card">
-                                            <h2 className="font-size-14px color-p pad-btm-10px">{item.title}</h2>
-                                            <div className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
-                                                <h3 className="font-size-16px pad-btm-10px">{item.icon_1} {item.name_1}</h3>
-                                                <p className="font-size-12px pad-btm-10px">{item.desc_1}</p>
-                                                <h3 className="font-size-16px pad-btm-10px">{item.icon_2} {item.name_2}</h3>
-                                                <p className="font-size-12px pad-btm-10px">{item.desc_2}</p>
-                                                <h3 className="font-size-16px pad-btm-10px">{item.icon_3} {item.name_3}</h3>
-                                                <p className="font-size-12px pad-btm-10px">{item.desc_3}</p>
+                                    <div className="card">
+                                        <h2 className="font-size-14px color-p pad-btm-10px">WorkFlow</h2>
+                                        {lolList.map((item) => (
+                                            <div key={item.id} className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
+                                                <h3 className="font-size-16px pad-btm-10px flex align-itm-c gap-10px">{item.icon} {item.name}</h3>
+                                                <p className="font-size-12px pad-btm-10px">{item.desc}</p>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
+                                    <div className="card">
+                                        <h2 className="font-size-14px color-p pad-btm-10px">FlowWork</h2>
+                                        <div className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
+                                            <span className="font-size-16px pad-btm-10px"><Dna /></span>
+                                            <p className="font-size-12px pad-btm-10px">Penempatan posisi yang Ideal dalam repetisi dibalik kata tiap kalimat yang menjadikan paragraf deskripsi ini berisi namun berulang.</p>                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +294,7 @@ export default function AlahBacot() {
                     </div>
                 </section>
 
-                <section aria-labelledby="skill-bacot" className="pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
+                {/*<section aria-labelledby="skill-bacot" className="pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
                     <div className="flex-mx-1024px-dir-clm jus-c-c align-itm-inherit gap-24px">
 
                     </div>
@@ -303,7 +304,7 @@ export default function AlahBacot() {
                     <div className="flex-mx-1024px-dir-clm jus-c-c align-itm-inherit gap-24px">
 
                     </div>
-                </footer>
+                </footer>*/}
             </main>
         </div >
     )
