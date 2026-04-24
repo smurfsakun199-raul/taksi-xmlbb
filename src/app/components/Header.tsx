@@ -17,7 +17,7 @@ const lisItemLinkBacot = [
     {
         id: 1,
         icon: <House />,
-        link: 'bacot',
+        link: 'blog',
         name: 'Home'
     },
     {

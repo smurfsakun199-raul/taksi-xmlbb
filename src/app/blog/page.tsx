@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const posts = [
-    { slug: "react", title: "React Dasar" },
-    { slug: "nextjs", title: "Next.js Mantap" },
+    { id: 1, slug: "react", title: "React Dasar" },
+    { id: 2, slug: "nextjs", title: "Next.js Mantap" },
 ]
 
 export default function BlogPage() {
@@ -10,8 +10,7 @@ export default function BlogPage() {
         <main>
             <h1>Blog</h1>
             {posts.map((post) => (
-
-                <Link href={`/blog${post.slug}`}>{post.title}</Link>
+                <Link key={post.id} href={`/blog${post.slug}`}>{post.title}</Link>
             ))}
         </main>
     )
