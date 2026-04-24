@@ -7,6 +7,8 @@
   --bcb: rgb(42, 99, 206), rgb(36, 189, 209), #6366f1;
   --purple: #a855f7;
   --pink: #ec4899;
+  --bg-blur-card: #e1e1e114;
+  --bg-blur-card-1: #cfcfcf3b;
   --bg-blue: rgb(42, 99, 206);
   --bg-pink: rgb(218, 43, 209);
   --bg-cyan: rgb(36, 189, 209);
@@ -49,6 +51,8 @@ body {
 
 body.dark {
   --bg: black;
+  --bg-blur-card: #7373733b;
+  --bg-blur-card-1: #cfcfcf3b;
   --bg-dark: white;
   --bg-dark-op: rgba(0, 0, 0, 0.3);
   --bg-white: rgb(255, 255, 255);
@@ -106,8 +110,8 @@ body.dark {
 
   .glow {
     position: absolute;
-    width: 450px;
-    height: 250px;
+    width: 400px;
+    height: 100px;
     border-radius: 50%;
     filter: blur(120px);
     z-index: -1;
@@ -122,16 +126,28 @@ body.dark {
     z-index: -1;
   }
 
-  .tolol-pink {
+  .tolol-blue {
     background: var(--bg-blue);
     top: 10%;
     left: 10%;
   }
 
-  .tolol-purple {
+  .tolol-blue-old {
     background: var(--bg-blue-old);
     bottom: 10%;
     right: 10%;
+  }
+
+  .tolol-noname {
+    background: rgb(68, 68, 202);
+    bottom: -8%;
+    right: 24%;
+  }
+
+  .tolol-white {
+    background: var(--clr);
+    top: 10%;
+    left: 10%;
   }
 
   .tolol-blur {
@@ -280,6 +296,10 @@ body.dark {
     padding: 0 14px;
   }
 
+  .pad-4-18px {
+    padding: 4px 18px;
+  }
+
   .pad-8-18px {
     padding: 8px 18px;
   }
@@ -380,8 +400,8 @@ body.dark {
   }
 
   .card-hover-dig-to-left:hover {
-    transform: translate3d(-20px, -10px, 0px);
-    box-shadow: 10px 20px 10px var(--bg-blue);
+    transform: translate3d(-10px, -10px, 0px);
+    box-shadow: 10px 10px 10px var(--bg-blue);
   }
 
   .hover-after-effect {
@@ -513,6 +533,10 @@ body.dark {
 
   /* -- BackGround -- */
 
+  .bg-blur-card {
+    background: var(--bg-blur-card);
+  }
+
   .bg-blue-rd-c-at-0-0 {
     background: radial-gradient(circle at 0 0, var(--bg), blue 96%);
   }
@@ -620,6 +644,32 @@ body.dark {
   }
 
   .icn-item-svg a {
+    position: relative;
+    transition: 0.3s ease-in-out;
+  }
+
+  .icn-item-svg a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    right: 50%;
+    height: 2px;
+    bottom: -2px;
+    background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%, var(--bg) 200%);
+    transform: translateX(50%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .icn-item-svg a:hover {
+    box-shadow: 0px 0px 6px var(--bg-blue);
+    transform: translateY(-1px);
+  }
+
+  .icn-item-svg a:hover::after {
+    width: 100%;
+  }
+
+  .icn-item-svg a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -656,8 +706,8 @@ body.dark {
   }
 
   .card-hover-dig-to-left:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 0px 6px var(--bg-cyan);
+    transform: translateY(-6px);
+    box-shadow: 0px 6px 6px var(--bg-blue);
   }
 
 }
