@@ -13,7 +13,7 @@ import {
     Layers2,
 } from "lucide-react";
 
-const lisItemLinkBacot = [
+const listItemLinksBacot = [
     {
         id: 1,
         icon: <House />,
@@ -23,25 +23,25 @@ const lisItemLinkBacot = [
     {
         id: 2,
         icon: <Layers2 />,
-        link: '/',
-        name: 'Collections'
+        link: '/projects',
+        name: 'Projects'
     },
     {
         id: 3,
         icon: <PaintBucket />,
-        link: '/',
-        name: 'Style'
+        link: '/stats',
+        name: 'Stats'
     },
     {
         id: 4,
         icon: <WandSparkles />,
-        link: '/',
-        name: 'Experiments'
+        link: '/contact',
+        name: 'Contact'
     },
     {
         id: 5,
         icon: <Info />,
-        link: '/',
+        link: '/about',
         name: 'About'
     }
 ];
@@ -70,7 +70,7 @@ export default function Header() {
 
     return (
         <header>
-            <nav className="pos-sticky width-100ps top pad-bl-10px pad-0-14px br-btm-op">
+            <nav className="pos-sticky width-100ps top pad-bl-10px pad-0-14px">
                 <div className="flex jus-c-sb align-itm-c max-w-1180px margin-auto">
                     <div className="flex jus-c-c align-itm-c gap-10px">
                         <div className="bacotLogo">
@@ -82,7 +82,7 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="icn-item-svg flex jus-c-c align-itm-c gap-20px pad-10-24px outline-op bg-blur-card br-radius-12px">
-                        {lisItemLinkBacot.map((item) => (
+                        {listItemLinksBacot.map((item) => (
                             <Link key={item.id} href={item.link}>{item.icon}{item.name}</Link>
                         ))}
                     </div>
@@ -97,6 +97,7 @@ export default function Header() {
                     </div>
                 </div>
             </nav>
+            <div className="horiz-effect-center"></div>
         </header>
 
     )
