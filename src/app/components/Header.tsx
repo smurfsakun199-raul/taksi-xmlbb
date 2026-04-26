@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
     Sun,
@@ -8,8 +9,8 @@ import {
     House,
     CodeXml,
     Info,
-    PaintBucket,
-    WandSparkles,
+    CircleUserRound,
+    ChartNoAxesColumn,
     Layers2,
 } from "lucide-react";
 
@@ -28,13 +29,13 @@ const listItemLinksBacot = [
     },
     {
         id: 3,
-        icon: <PaintBucket />,
+        icon: <ChartNoAxesColumn />,
         link: '/stats',
         name: 'Stats'
     },
     {
         id: 4,
-        icon: <WandSparkles />,
+        icon: <CircleUserRound />,
         link: '/contact',
         name: 'Contact'
     },
@@ -68,6 +69,8 @@ export default function Header() {
         setIsDark(prev => prev === 'dark' ? 'light' : 'dark');
     }
 
+    const pathName = usePathname();
+
     return (
         <header>
             <nav className="pos-sticky width-100ps top pad-bl-10px pad-0-14px">
@@ -82,12 +85,16 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="icn-item-svg flex jus-c-c align-itm-c gap-20px pad-10-24px outline-op bg-blur-card br-radius-12px">
-                        {listItemLinksBacot.map((item) => (
-                            <Link key={item.id} href={item.link}>{item.icon}{item.name}</Link>
-                        ))}
+                        {listItemLinksBacot.map((item) => {
+                            const linkActive = pathName === item.link;
+                            return (
+                                <Link key={item.id} href={item.link}
+                                    className={linkActive ? 'color-blue' : ''}>{item.icon}{item.name}</Link>
+                            );
+                        })}
                     </div>
                     <div>
-                        <button onClick={toggleThemesMode} className="icn-svg-theme flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
+                        <button onClick={toggleThemesMode} className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
                             {isDark === 'light' ? (
                                 <><Sun /> Light</>
                             ) : (

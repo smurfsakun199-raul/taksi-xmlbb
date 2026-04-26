@@ -1,6 +1,9 @@
+/*import Wallpaper from "@/src/app/components/RepresImage";*/
+
 export const metadata = {
-    title: 'BadutLawak',
-    description: 'Portfolio lumayan seadanya',
+    title: 'HomePage Portfolio',
+    description: 'Gimana biar website terlihat sangat cepat dan estetik? Lihat contoh desain website kami & temukan referensi serta inspirasi kamu disini,yuk gas!',
+    keywords: ["portfolio estetik", "Website lucu dan ngakak", "bagaimana portfolio yang estetik?", "website dengan skor 100& pada semua aspek", "contoh website terkeren"]
 }
 
 import {
@@ -126,7 +129,7 @@ const skillsBacot = [
         id: 2,
         skr: 6.7,
         icn: '',
-        skill: 'Optimization',
+        skill: 'Optimize',
         desc: 'Penyederhanaan fleksibilitas yang tak diharapkan.'
     },
     {
@@ -233,7 +236,7 @@ export default function AlahBacot() {
                 </div>
             </section>
 
-            <section aria-labelledby="road-bacot" className="pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
+            <section aria-labelledby="road-bacot" className="sec-visible pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
                 <div className="horiz-effect-left"></div>
                 <div className="flex pad-top-10px pad-btm-20px">
                     <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
@@ -261,7 +264,7 @@ export default function AlahBacot() {
                 </div>
             </section>
 
-            <section aria-labelledby="skill-bacot" className="pos-rel pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
+            <section aria-labelledby="skill-bacot" className="sec-visible pos-rel pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
                 <div className="glow tolol-blue-old"></div>
                 <div className="horiz-effect-right"></div>
                 <div className="flex pad-top-10px pad-btm-20px">
@@ -274,7 +277,7 @@ export default function AlahBacot() {
                         <div className="hover-after-effect-btm--24px pad-10px br-radius-50ps bg-blue-rd-c-at-0-0">
                             <strong className="font-size-40px flex jus-c-c align-itm-c br-op br-radius-50ps width-100px height-100px pad-10px bg-dark">{skorLol}</strong>
                         </div>
-                        <div className="flex flex-direc-clm jus-c-c align-itm-inherit gap-10px">
+                        <div className="item-desc-score flex flex-direc-clm jus-c-c align-itm-inherit gap-10px">
                             {skillsBacot.map((item) => (
                                 <p key={item.id} className="font-size-14px">{item.skill} <strong className="font-size-16px">{item.skr}</strong></p>
                             ))}

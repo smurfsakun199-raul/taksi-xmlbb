@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
     return {
-        title: `blogTolol ${slug}`,
-        description: `Artikel tolol ni mah ${slug}`
+        title: `Blog ${slug}`,
+        description: 'Gimana biar website terlihat sangat cepat dan estetik? Lihat contoh desain website kami & temukan referensi serta inspirasi kamu disini,yuk gas!',
+        keywords: ["portfolio estetik", "Website lucu dan ngakak", "bagaimana portfolio yang estetik?", "website dengan skor 100& pada semua aspek", "contoh website terkeren"]
     }
 }
 
