@@ -75,19 +75,19 @@ const lolList = [
         id: 1,
         icon: <TrendingUpDown />,
         name: 'Optimization',
-        desc: 'Optimisasi yang diusahakan'
+        desc: 'Optimisasi yang diusahakan.'
     },
     {
         id: 2,
         icon: <ShieldCheck />,
         name: 'Security Self',
-        desc: 'Keamanan yang belum terjamin baik'
+        desc: 'Keamanan yang belum terjamin baik.'
     },
     {
         id: 3,
         icon: <ChartNoAxesCombined />,
         name: 'Up Performance',
-        desc: 'Sedikit peningkatan harapan'
+        desc: 'Sedikit peningkatan harapan.'
     }
 ];
 
@@ -151,21 +151,27 @@ const skillsBacot = [
 export default function AlahBacot() {
 
     return (
-        <main>
-            <section aria-labelledby="bacot-title" className="pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
-                <div className="glow tolol-blue-old"></div>
-                <div className="flex-mx-1024px-dir-clm jus-c-c align-itm-inherit gap-24px">
-                    <div className="pos-rel">
-                        <div className="flex jus-c-l gap-10px pad-btm-10px">
+        <main className="max-w-1210px margin-auto">
+            <section aria-labelledby="bacot-title" className="pad-bl-20px pad-top-48px pad-0-14px">
+                <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
+                    <h1 id="project-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">PortFolio</h1>
+                    <p className="font-size-14px txt-align-c pad-btm-10px">Merepresentasikan website Portfolio yang Tolol banget juga biasa</p>
+                    <div className="horiz-effect-center-small"></div>
+                </div>
+                <div className="pos-rel sec-visible flex flex-direc-clm jus-c-c align-itm-inherit pad-top-10px gap-24px">
+                    <div className="glow tolol-blue-old-top-r-0-10ps"></div>
+                    <div className="pos-rel pad-btm-20px">
+                        <div className="flex jus-c-c gap-10px pad-btm-10px">
                             <Palette />
                             <span>Experinece Style</span>
                         </div>
                         <div className="pad-btm-40px">
-                            <div className="glow tolol-blue"></div>
-                            <h1 id="bacot-title" className="font-size-40px pad-btm-20px">Design Portfolio dengan memadukan <span className="glow-text">Ketololan</span> yang <span className="glow-text">Unik, Rapi</span> dan <span className="glow-text">Elegan</span></h1>
-                            <p>Deskripsi ini mungkin membuat anda akan menyesal jika sampai membacanya sampai selesai,dikarenakan kata yang saya gunakan merepetisi sebuah kata menjadi berulang ulang,dan akhirnya yang anda dapat hanyalah tautologi dan tak menguntungkan anda.</p>
+                            <div className="glow tolol-blue-top-l-10-10ps"></div>
+                            <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Design Portfolio dengan memadukan <span className="glow-text">Ketololan</span> yang <span className="glow-text">Unik, Rapi</span> dan biasa</h2>
+                            <p className="txt-align-c">Deskripsi ini mungkin membuat anda akan menyesal jika sampai membacanya sampai selesai,dikarenakan kata yang saya gunakan merepetisi sebuah kata menjadi berulang ulang,dan akhirnya yang anda dapat hanyalah tautologi dan tak menguntungkan anda.</p>
                         </div>
-                        <div className="flex pad-btm-20px">
+                        <div className="horiz-effect-right"></div>
+                        <div className="flex pad-top-10px pad-btm-20px">
                             <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
                                 <h2 className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</h2>
                             </div>
@@ -190,53 +196,51 @@ export default function AlahBacot() {
                         <div className="glow tolol-noname"></div>
                     </div>
 
-                    <div className="card-hover-dig-to-left bg-blur-card width-100ps">
-                        <div className="">
-                            <div className="flex jus-c-sb align-itm-c gap-10px pad-btm-10px">
-                                <div className="icn-circle-svg flex gap-10px">
-                                    <span className="bg-blue-circle"></span>
-                                    <span className="bg-cyan-circle"></span>
-                                    <span className="bg-white-circle"></span>
-                                </div>
-                                <p className="font-size-12px">Art Design</p>
+                    <div className="card-hover-dig-to-left bg-blur-card">
+                        <div className="flex jus-c-sb align-itm-c gap-10px pad-btm-10px">
+                            <div className="icn-circle-svg flex gap-10px">
+                                <span className="bg-blue-circle"></span>
+                                <span className="bg-cyan-circle"></span>
+                                <span className="bg-white-circle"></span>
                             </div>
-                            <div className="card flex flex-direc-clm jus-c-sb">
-                                <h2 className="font-size-12px pad-btm-10px color-p">Fokus utama</h2>
-                                <div className="flex jus-c-c pad-btm-10px gap-10px">
-                                    <h3 className="font-size-18px">Design sistem tuk gaya Tolol Modern</h3>
-                                    <Layers />
-                                </div>
-                                <div className="flex-mx-500px-dir-clm jus-c-sb align-itm-stretch gap-24px">
-                                    {fokusBacotList.map((item) => (
-                                        <div key={item.id} className="card-small-10-20px bg-dark-op">
-                                            <h4>{item.name}</h4>
-                                        </div>
-                                    ))}
-                                </div>
+                            <p className="font-size-12px">Art Design</p>
+                        </div>
+                        <div className="card flex flex-direc-clm jus-c-sb">
+                            <h2 className="font-size-12px pad-btm-10px color-p">Fokus utama</h2>
+                            <div className="flex jus-c-c pad-btm-10px gap-10px">
+                                <h3 className="font-size-18px">Design sistem tuk gaya Tolol Modern</h3>
+                                <Layers />
                             </div>
-                            <div className="grid grid-temp-clm-r2 jus-c-c align-itm-inherit gap-10px pad-top-10px">
-                                <div className="card">
-                                    <h2 className="font-size-14px color-p pad-btm-10px">WorkFlow</h2>
-                                    {lolList.map((item) => (
-                                        <div key={item.id} className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
-                                            <h3 className="font-size-16px pad-btm-10px flex align-itm-c gap-10px">{item.icon} {item.name}</h3>
-                                            <p className="font-size-12px pad-btm-10px">{item.desc}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="card">
-                                    <h2 className="font-size-14px color-p pad-btm-10px">FlowWork</h2>
-                                    <div className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
-                                        <span className="font-size-16px pad-btm-10px"><Dna /></span>
-                                        <p className="font-size-12px pad-btm-10px">Penempatan posisi yang Ideal dalam repetisi dibalik kata tiap kalimat yang menjadikan paragraf deskripsi ini berisi namun berulang.</p>                                        </div>
-                                </div>
+                            <div className="flex-mx-500px-dir-clm jus-c-sb align-itm-stretch gap-24px">
+                                {fokusBacotList.map((item) => (
+                                    <div key={item.id} className="card-small-10-20px bg-dark-op">
+                                        <h4>{item.name}</h4>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="grid grid-temp-clm-r2 jus-c-c align-itm-inherit gap-10px pad-top-10px">
+                            <div className="card">
+                                <h2 className="font-size-14px color-p pad-btm-10px">WorkFlow</h2>
+                                {lolList.map((item) => (
+                                    <div key={item.id} className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
+                                        <h3 className="font-size-16px pad-btm-10px flex align-itm-c gap-10px">{item.icon} {item.name}</h3>
+                                        <p className="font-size-14px pad-btm-10px">{item.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="card">
+                                <h2 className="font-size-14px color-p pad-btm-10px">FlowWork</h2>
+                                <div className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
+                                    <span className="font-size-16px pad-btm-10px"><Dna /></span>
+                                    <p className="font-size-14px pad-btm-10px">Penempatan posisi yang Ideal dalam repetisi dibalik kata tiap kalimat yang menjadikan paragraf deskripsi ini berisi namun berulang.</p>                                        </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section aria-labelledby="road-bacot" className="sec-visible pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
+            <section aria-labelledby="road-bacot" className="sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="horiz-effect-left"></div>
                 <div className="flex pad-top-10px pad-btm-20px">
                     <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
@@ -264,8 +268,8 @@ export default function AlahBacot() {
                 </div>
             </section>
 
-            <section aria-labelledby="skill-bacot" className="sec-visible pos-rel pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
-                <div className="glow tolol-blue-old"></div>
+            <section aria-labelledby="skill-bacot" className="sec-visible-auto pos-rel pad-bl-20px pad-top-48px pad-0-14px">
+                <div className="glow tolol-blue-old-btm-r-10-10ps"></div>
                 <div className="horiz-effect-right"></div>
                 <div className="flex pad-top-10px pad-btm-20px">
                     <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
@@ -296,12 +300,6 @@ export default function AlahBacot() {
                     </div>
                 </div>
             </section>
-
-            {/*<section aria-labelledby="skill-bacot" className="pad-bl-20px max-w-1210px margin-auto pad-top-48px pad-0-14px">
-                    <div className="flex-mx-1024px-dir-clm jus-c-c align-itm-inherit gap-24px">
-
-                    </div>
-                </section>*/}
         </main>
     )
 }

@@ -1,3 +1,5 @@
+import { Library } from "lucide-react";
+
 export const metadata = {
     title: 'Project Web',
     description: 'Bagaimana cara membuat website yang cepat dan keren? yuk lihat projek yang kami buat dan temukan inspirasi buat projek kamu!',
@@ -24,7 +26,7 @@ const listProjek = [
         pers: '31.5%',
         title: 'Doa',
         name: 'Doa sebagai fondasi projek',
-        desc: 'Selain Niat,doa merupakan faktor terpenting. 31.5% berdoa tuk melakukan aktifitas mungkin.'
+        desc: 'Selain Niat,doa merupakan faktor terpenting. 31.5% populasi beraga berdoa tuk melakukan aktifitas mungkin.'
     },
     {
         id: 4,
@@ -38,7 +40,7 @@ const listProjek = [
         pers: '94.9%',
         title: 'Mimpi',
         name: 'Kenyataan yang sangat ironi',
-        desc: 'Bangun dari tidur yang indah memimpikan website yang bagus tanpa Ngapa ngapain, itulah 94.9% orang saat ini.'
+        desc: 'Bangun dari tidur yang indah memimpikan website yang bagus tanpa Ngapa ngapain, mungkin 94.9% orang di tahap ini.'
     }
 ];
 
@@ -46,15 +48,23 @@ export default function Projects() {
     return (
         <main className="max-w-1210px margin-auto">
             <section aria-labelledby="project-bacot" className="pad-bl-20px pad-top-48px pad-0-14px">
-                <div className="glow tolol-blue-old"></div>
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
-                    <h1 id="project-bacot" className="font-size-40px glow-text box-sdw-0-2-6px">Projects</h1>
-                    <p className="font-size-14px pad-btm-10px">Bagaimana cara tuk membuat website?</p>
+                    <h1 id="project-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">Projects</h1>
+                    <p className="font-size-14px txt-align-c pad-btm-10px">Bagaimana cara tuk membuat website Tolol?</p>
                     <div className="horiz-effect-center-small"></div>
                 </div>
-                <div className="grid grid-temp-clm-r4 jus-c-c align-itm-inherit pad-top-48px pad-btm-20px gap-48px">
+                <div className="flex jus-c-c align-itm-c gap-10px pad-top-10px pad-btm-10px">
+                    <Library />
+                    <span>Implementation Project</span>
+                </div>
+                <div className="pad-btm-40px pos-rel">
+                    <div className="glow tolol-blue-top-l-10-10ps"></div>
+                    <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Project website <span className="glow-text">Tolol</span> juga <span className="glow-text">Lambat, Berat</span> nan <span className="glow-text">Buruk</span></h2>
+                    <p className="txt-align-c">Buat projek anda lebih baik dengan tidak mengharapkan apapun harapan anda pada kami,karena akan membuat anda kecewa.</p>
+                </div>
+                <div className="flex flex-direc-clm jus-c-c align-itm-inherit pad-top-48px pad-btm-20px gap-48px">
                     {listProjek.map((item) => (
-                        <div key={item.id} className="pad-20-20px">
+                        <div key={item.id} className="pad-20-20px box-sdw-1-2-6px">
                             <div className="flex jus-c-sb align-itm-c pad-btm-20px">
                                 <h2 className="font-size-16px color-p">{item.title}</h2>
                                 <span>{item.pers}</span>
@@ -66,11 +76,14 @@ export default function Projects() {
                 </div>
                 <div className="horiz-effect-right"></div>
             </section>
-            <section aria-labelledby="kesimpulan-projek-bacot" className="pad-bl-20px pad-top-48px pad-0-14px">
+            <section aria-labelledby="kesimpulan-projek-bacot" className="pos-rel pad-bl-20px pad-top-48px pad-0-14px">
+                <div className="glow tolol-blue-old-btm-r-10-10ps"></div>
                 <div className="flex jus-c-c align-itm-c">
-                    <h2 id="kesimpulan-projek-bacot" className="font-size-24px">Kesimpulan</h2>
+                    <h2 id="kesimpulan-projek-bacot" className="font-size-3rem txt-align-c">Kesimpulan</h2>
                 </div>
-
+                <div className="pad-top-30px pad-btm-40px">
+                    <h3 className="txt-align-c">Sory,Authornya lagi mimpi skenario indah ini,padahal dari tadi kaga gerak.</h3>
+                </div>
             </section>
         </main>
     )

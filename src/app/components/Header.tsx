@@ -48,25 +48,20 @@ const listItemLinksBacot = [
 ];
 
 export default function Header() {
-    const [isDark, setIsDark] = useState(() => {
-        if (typeof window !== 'undefined') {
-            return localStorage.getItem('theme') || 'dark'
-        }
-        return 'dark'
-    })
+    const [isLight, setIsLight] = useState('dark');
 
     useEffect(() => {
-        if (isDark === 'light') {
-            document.body.classList.add('light');
-        } else {
-            document.body.classList.remove('light');
-        }
+        const simpanToggle = localStorage.getItem('theme') || 'dark';
+        setIsLight(simpanToggle);
+    }, []);
 
-        localStorage.setItem('theme', isDark);
-    }, [isDark]);
+    useEffect(() => {
+        document.body.classList.toggle('light', isLight === 'light');
+        localStorage.setItem('theme', isLight);
+    }, [isLight]);
 
-    const toggleThemesMode = () => {
-        setIsDark(prev => prev === 'dark' ? 'light' : 'dark');
+    const toggleTheme = () => {
+        setIsLight(prev => prev === 'dark' ? 'light' : 'dark');
     }
 
     const pathName = usePathname();
@@ -89,13 +84,14 @@ export default function Header() {
                             const linkActive = pathName === item.link;
                             return (
                                 <Link key={item.id} href={item.link}
-                                    className={linkActive ? 'color-blue' : ''}>{item.icon}{item.name}</Link>
+                                    className={linkActive ? 'color-blue' : ''}>{item.icon}{item.name}
+                                </Link>
                             );
                         })}
                     </div>
                     <div>
-                        <button onClick={toggleThemesMode} className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
-                            {isDark === 'light' ? (
+                        <button onClick={toggleTheme} className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
+                            {isLight === 'light' ? (
                                 <><Sun /> Light</>
                             ) : (
                                 <><Moon /> Darkz</>

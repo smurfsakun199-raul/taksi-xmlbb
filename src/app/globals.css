@@ -132,19 +132,25 @@ body.light {
     z-index: -1;
   }
 
-  .tolol-blue {
+  .tolol-blue-top-l-10-10ps {
     background: var(--bg-blue);
     top: 10%;
     left: 10%;
   }
 
-  .tolol-blue-old {
+  .tolol-blue-old-top-r-0-10ps {
+    background: var(--bg-blue-old);
+    top: 0;
+    right: 10%;
+  }
+
+  .tolol-blue-old-btm-r-10-10ps {
     background: var(--bg-blue-old);
     bottom: 10%;
     right: 10%;
   }
 
-  .tolol-noname {
+  .tolol-noname-btm-r {
     background: rgb(68, 68, 202);
     bottom: -8%;
     right: 24%;
@@ -163,6 +169,11 @@ body.light {
   }
 
   .sec-visible {
+    content-visibility: visible;
+    contain-intrinsic-size: 0 500px;
+  }
+
+  .sec-visible-auto {
     content-visibility: auto;
     contain-intrinsic-size: 0 500px;
   }
@@ -213,6 +224,24 @@ body.light {
 
   .font-size-40px {
     font-size: 40px;
+  }
+
+  .font-size-3rem {
+    font-size: 3rem;
+  }
+
+  .font-size-3-5rem {
+    font-size: 3.5rem;
+  }
+
+  .font-size-4rem {
+    font-size: 4rem;
+  }
+
+  /* --- Text Align --- */
+
+  .txt-align-c {
+    text-align: center;
   }
 
   /* -- Display -- */
@@ -361,6 +390,10 @@ body.light {
 
   .pad-top-20px {
     padding-top: 20px;
+  }
+
+  .pad-top-30px {
+    padding-top: 30px;
   }
 
   .pad-top-48px {
@@ -605,8 +638,12 @@ body.light {
 
   /* --- box-shadow --- */
 
-  .box-sdw-0-2-6px {
+  .box-sdw-1-2-6px {
     box-shadow: 1px 2px 6px var(--clr);
+  }
+
+  .box-sdw-0-2-6px-dark-blue {
+    box-shadow: 1px 2px 6px var(--clr), -2px -2px 6px var(--bg-blue-old);
   }
 
   /* --- Icon --- */
