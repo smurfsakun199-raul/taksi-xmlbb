@@ -112,13 +112,13 @@ export default function Stats() {
 
     const isList = daftarStatistik[stats];
 
-    const buttonStats = [
+    const buttonStats: { id: StatsType, label: string }[] = [
         { id: 'all', label: 'All' },
         { id: 's1', label: 'Perform' },
         { id: 's2', label: 'Acces' },
         { id: 's3', label: 'Best' },
         { id: 's4', label: 'SEO' }
-    ] as const;
+    ];
 
     return (
         <main className="max-w-1210px margin-auto">

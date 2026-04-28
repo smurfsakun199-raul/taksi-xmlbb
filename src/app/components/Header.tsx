@@ -12,6 +12,8 @@ import {
     CircleUserRound,
     ChartNoAxesColumn,
     Layers2,
+    TextAlignJustify,
+    EyeClosed,
 } from "lucide-react";
 
 const listItemLinksBacot = [
@@ -66,6 +68,8 @@ export default function Header() {
 
     const pathName = usePathname();
 
+    const [downLink, setDownLink] = useState(false);
+
     return (
         <header>
             <nav className="pos-sticky width-100ps top pad-bl-10px pad-0-14px">
@@ -89,7 +93,7 @@ export default function Header() {
                             );
                         })}
                     </div>
-                    <div>
+                    <div className="flex jus-c-c align-itm-c gap-10px">
                         <button onClick={toggleTheme} className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
                             {isLight === 'light' ? (
                                 <><Sun /> Light</>
@@ -97,10 +101,27 @@ export default function Header() {
                                 <><Moon /> Darkz</>
                             )}
                         </button>
+                        <button
+                            onClick={() => setDownLink(prev => !prev)}
+                            className="bg-dark font-size-0 cursor-pnt dis-mx-764-visible"><TextAlignJustify />
+                        </button>
                     </div>
                 </div>
             </nav>
             <div className="horiz-effect-center"></div>
+            <div className={`pos-abs width-100ps ${downLink === true ? 'icn-item-link-op1-important' : ''} icn-item_764-svg grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
+                {listItemLinksBacot.map((item) => {
+                    const linkActive = pathName === item.link;
+                    return (
+                        <Link key={item.id} href={item.link}
+                            className={linkActive ? 'color-blue' : ''}>{item.icon}{item.name}
+                        </Link>
+                    );
+                })}
+                <button onClick={() => setDownLink(false)}
+                    className="bg-op font-size-14px cursor-pnt flex jus-c-c align-itm-c gap-10px"><EyeClosed />Close
+                </button>
+            </div>
         </header>
 
     )
