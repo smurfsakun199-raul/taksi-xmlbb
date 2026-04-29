@@ -97,7 +97,7 @@ export default function Header() {
                     <div className="flex jus-c-c align-itm-c gap-10px">
                         <button
                             type="button"
-                            aria-pressed={isLight as any}
+                            aria-label="Toggle Theme"
                             onClick={toggleTheme}
                             className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
                             {isLight === 'light' ? (
@@ -125,6 +125,8 @@ export default function Header() {
                     );
                 })}
                 <button
+
+                    aria-label="show Link"
                     aria-pressed={downLink}
                     onClick={() => setDownLink(false)}
                     className="bg-op font-size-14px cursor-pnt flex jus-c-c align-itm-c gap-10px">
