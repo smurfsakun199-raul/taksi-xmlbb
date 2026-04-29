@@ -107,6 +107,7 @@ export default function Header() {
                             )}
                         </button>
                         <button
+                            aria-label="showLink"
                             aria-pressed={downLink}
                             onClick={() => setDownLink(prev => !prev)}
                             className="bg-dark font-size-0 cursor-pnt dis-mx-764-visible"><TextAlignJustify />
@@ -125,8 +126,7 @@ export default function Header() {
                     );
                 })}
                 <button
-
-                    aria-label="show Link"
+                    aria-label="closeLink"
                     aria-pressed={downLink}
                     onClick={() => setDownLink(false)}
                     className="bg-op font-size-14px cursor-pnt flex jus-c-c align-itm-c gap-10px">
