@@ -1,4 +1,4 @@
-import { posts } from "@/src/data/posts";
+import { posts } from "@/data/posts";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {

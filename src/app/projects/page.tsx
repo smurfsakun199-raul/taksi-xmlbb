@@ -58,7 +58,7 @@ export default function Projects() {
                     <span>Implementation Project</span>
                 </div>
                 <div className="pad-btm-40px pos-rel">
-                    <div className="glow tolol-blue-top-l-10-10ps"></div>
+                    <div className="glow-w400-h100px tolol-blue-top-l-10-10ps"></div>
                     <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Project website <span className="glow-text">Tolol</span> juga <span className="glow-text">Lambat, Berat</span> nan <span className="glow-text">Buruk</span></h2>
                     <p className="txt-align-c">Buat projek anda lebih baik dengan tidak mengharapkan apapun harapan anda pada kami,karena akan membuat anda kecewa.</p>
                 </div>
@@ -77,7 +77,7 @@ export default function Projects() {
                 <div className="horiz-effect-right"></div>
             </section>
             <section aria-labelledby="kesimpulan-projek-bacot" className="pos-rel pad-bl-20px pad-top-48px pad-0-14px">
-                <div className="glow tolol-blue-old-btm-r-10-10ps"></div>
+                <div className="glow-w400-h100px tolol-blue-old-btm-r-10-10ps"></div>
                 <div className="flex jus-c-c align-itm-c">
                     <h2 id="kesimpulan-projek-bacot" className="font-size-3rem txt-align-c">Kesimpulan</h2>
                 </div>

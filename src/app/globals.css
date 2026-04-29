@@ -119,15 +119,26 @@ body.light {
     overflow: hidden;
   }
 
+  /* --- Effect-Glow --- */
+
   .glow-text {
     background: linear-gradient(to right, var(--bcb));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  .glow {
+  .glow-w400-h100px {
     position: absolute;
     width: 400px;
+    height: 100px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+  }
+
+  .glow-w300-h100px {
+    position: absolute;
+    width: 300px;
     height: 100px;
     border-radius: 50%;
     filter: blur(120px);
@@ -158,6 +169,12 @@ body.light {
     right: 20%;
   }
 
+  .tolol-red-old-btm-l-10-10ps {
+    background: var(--bg-red-old);
+    bottom: 10%;
+    left: 10%;
+  }
+
   .tolol-red-old-btm-l-10-30ps {
     background: var(--bg-red-old);
     bottom: 10%;
@@ -169,6 +186,8 @@ body.light {
     bottom: -8%;
     right: 24%;
   }
+
+  /* --- Content-Visible --- */
 
   .sec-visible {
     content-visibility: visible;
@@ -360,6 +379,12 @@ body.light {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
+  /* -- Z-index -- */
+
+  .z-index-1000 {
+    z-index: 1000;
+  }
+
   /* -- Padding -- */
 
   .pad-0-14px {
@@ -513,6 +538,10 @@ body.light {
     width: 100px;
   }
 
+  .max-w-400px {
+    max-width: 400px;
+  }
+
   .max-w-500px {
     max-width: 500px;
   }
@@ -619,6 +648,12 @@ body.light {
     background: linear-gradient(to right, black, white);
   }
 
+  /* -- Backdrop-Filter -- */
+
+  .backdrop-f-blur-8px {
+    backdrop-filter: blur(8px);
+  }
+
   /* -- Border/Outline -- */
 
   .br {
@@ -694,6 +729,10 @@ body.light {
     box-shadow: 1px 2px 6px var(--clr);
   }
 
+  .box-sdw-0-2-6px {
+    box-shadow: 0 2px 6px var(--clr);
+  }
+
   .box-sdw-0-0-6px-dark-blue {
     box-shadow: 0 0 6px var(--bg-blue-old);
   }
@@ -765,6 +804,7 @@ body.light {
     transform: translateY(0) !important;
     opacity: 1 !important;
     pointer-events: visible !important;
+    z-index: 10 !important;
   }
 
   .icn-item_764-svg {
@@ -773,6 +813,7 @@ body.light {
     transition: 0.3s ease-in-out;
     pointer-events: none;
     backdrop-filter: blur(8px);
+    z-index: -1;
   }
 
   .icn-item_764-svg a {

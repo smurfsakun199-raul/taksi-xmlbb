@@ -11,9 +11,7 @@ import {
     ChartNoAxesCombined,
     Dna,
     Code,
-    CodeXml,
     Palette,
-    Library,
     Layers,
     LayersPlus,
     Road,
@@ -25,7 +23,6 @@ import {
     Terminal,
     TrendingUpDown,
     MoonStar,
-    WandSparkles,
 } from "lucide-react";
 
 const listYear = [
@@ -159,14 +156,14 @@ export default function AlahBacot() {
                     <div className="horiz-effect-center-small"></div>
                 </div>
                 <div className="pos-rel sec-visible flex flex-direc-clm jus-c-c align-itm-inherit pad-top-10px gap-24px">
-                    <div className="glow tolol-blue-old-top-r-0-10ps"></div>
+                    <div className="glow-w400-h100px tolol-blue-old-top-r-0-10ps"></div>
                     <div className="pos-rel pad-btm-20px">
                         <div className="flex jus-c-c gap-10px pad-btm-10px">
                             <Palette />
                             <span>Experinece Style</span>
                         </div>
                         <div className="pad-btm-40px">
-                            <div className="glow tolol-blue-top-l-10-10ps"></div>
+                            <div className="glow-w400-h100px tolol-blue-top-l-10-10ps"></div>
                             <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Design Portfolio dengan memadukan <span className="glow-text">Ketololan</span> yang <span className="glow-text">Unik, Rapi</span> dan biasa</h2>
                             <p className="txt-align-c">Deskripsi ini mungkin membuat anda akan menyesal jika sampai membacanya sampai selesai,dikarenakan kata yang saya gunakan merepetisi sebuah kata menjadi berulang ulang,dan akhirnya yang anda dapat hanyalah tautologi dan tak menguntungkan anda.</p>
                         </div>
@@ -269,7 +266,7 @@ export default function AlahBacot() {
             </section>
 
             <section aria-labelledby="skill-bacot" className="sec-visible-auto pos-rel pad-bl-20px pad-top-48px pad-0-14px">
-                <div className="glow tolol-blue-old-btm-r-10-10ps"></div>
+                <div className="glow-w400-h100px tolol-blue-old-btm-r-10-10ps"></div>
                 <div className="horiz-effect-right"></div>
                 <div className="flex pad-top-10px pad-btm-20px">
                     <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
@@ -277,11 +274,13 @@ export default function AlahBacot() {
                     </div>
                 </div>
                 <div className="flex flex-direc-clm jus-c-c align-itm-c gap-24px">
-                    <div className="skills-score flex jus-c-c gap-24px pad-btm-40px">
-                        <div className="hover-after-effect-btm--24px pad-10px br-radius-50ps bg-blue-rd-c-at-0-0">
-                            <strong className="font-size-40px flex jus-c-c align-itm-c br-op br-radius-50ps width-100px height-100px pad-10px bg-dark">{skorLol}</strong>
+                    <div className="flex jus-c-c align-itm-c pad-btm-40px gap-24px">
+                        <div className="skills-score flex jus-c-c gap-24px">
+                            <div className="hover-after-effect-btm--24px pad-10px br-radius-50ps bg-blue-rd-c-at-0-0">
+                                <strong className="font-size-40px flex jus-c-c align-itm-c br-op br-radius-50ps width-100px height-100px pad-10px bg-dark">{skorLol}</strong>
+                            </div>
                         </div>
-                        <div className="item-desc-score flex flex-direc-clm jus-c-c align-itm-inherit gap-10px">
+                        <div className="item-desc-score flex flex-direc-clm jus-c-c align-itm-fs gap-10px">
                             {skillsBacot.map((item) => (
                                 <p key={item.id} className="font-size-14px">{item.skill} <strong className="font-size-16px">{item.skr}</strong></p>
                             ))}

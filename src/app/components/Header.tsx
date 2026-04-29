@@ -14,6 +14,7 @@ import {
     Layers2,
     TextAlignJustify,
     EyeClosed,
+    Eye,
 } from "lucide-react";
 
 const listItemLinksBacot = [
@@ -53,8 +54,8 @@ export default function Header() {
     const [isLight, setIsLight] = useState('dark');
 
     useEffect(() => {
-        const simpanToggle = localStorage.getItem('theme') || 'dark';
-        setIsLight(simpanToggle);
+        const simpanTheme = localStorage.getItem('theme') || 'dark';
+        setIsLight(simpanTheme);
     }, []);
 
     useEffect(() => {
@@ -64,7 +65,7 @@ export default function Header() {
 
     const toggleTheme = () => {
         setIsLight(prev => prev === 'dark' ? 'light' : 'dark');
-    }
+    };
 
     const pathName = usePathname();
 
@@ -94,7 +95,11 @@ export default function Header() {
                         })}
                     </div>
                     <div className="flex jus-c-c align-itm-c gap-10px">
-                        <button onClick={toggleTheme} className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
+                        <button
+                            type="button"
+                            aria-pressed={isLight as any}
+                            onClick={toggleTheme}
+                            className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
                             {isLight === 'light' ? (
                                 <><Sun /> Light</>
                             ) : (
@@ -102,6 +107,7 @@ export default function Header() {
                             )}
                         </button>
                         <button
+                            aria-pressed={downLink}
                             onClick={() => setDownLink(prev => !prev)}
                             className="bg-dark font-size-0 cursor-pnt dis-mx-764-visible"><TextAlignJustify />
                         </button>
@@ -109,7 +115,7 @@ export default function Header() {
                 </div>
             </nav>
             <div className="horiz-effect-center"></div>
-            <div className={`pos-abs width-100ps ${downLink === true ? 'icn-item-link-op1-important' : ''} icn-item_764-svg grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
+            <div className={`pos-abs z-index-1000 width-100ps ${downLink === true ? 'icn-item-link-op1-important' : ''} icn-item_764-svg grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
                 {listItemLinksBacot.map((item) => {
                     const linkActive = pathName === item.link;
                     return (
@@ -118,8 +124,12 @@ export default function Header() {
                         </Link>
                     );
                 })}
-                <button onClick={() => setDownLink(false)}
-                    className="bg-op font-size-14px cursor-pnt flex jus-c-c align-itm-c gap-10px"><EyeClosed />Close
+                <button
+                    aria-pressed={downLink}
+                    onClick={() => setDownLink(false)}
+                    className="bg-op font-size-14px cursor-pnt flex jus-c-c align-itm-c gap-10px">
+                    {downLink === true ? <Eye /> : <EyeClosed />}
+                    Close
                 </button>
             </div>
         </header>
