@@ -1,6 +1,7 @@
 'use client';
 import { Accessibility, ChartPie, CircleGauge, Layers3, LucideIcon, Orbit, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+const score = 93.4;
 
 interface Stats {
     id: number;
@@ -127,32 +128,65 @@ export default function Stats() {
         { id: 's4', label: 'SEO' }
     ] as const;
 
+    useEffect(() => {
+        const deff = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    (entry.target as HTMLElement).classList.add('rev');
+                    deff.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const showRev = document.querySelectorAll('.reveal');
+
+        showRev.forEach((el) => {
+            deff.observe(el);
+        });
+
+        return () => deff.disconnect();
+    }, []);
+
     return (
         <main className="max-w-1210px margin-auto">
-            <section aria-labelledby="stats-bacot" className="pad-bl-20px pad-top-48px pad-0-14px">
-                <div className="glow-w400-h100px tolol-blue-old-btm-r-10-10ps"></div>
+            <section aria-labelledby="stats-bacot" className="reveal sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
-                    <h1 id="stats-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">Stats</h1>
+                    <h1 id="stats-bacot" className="font-size-3rem glow-text-red box-sdw-0-2-6px-dark-red">Stats</h1>
                     <p className="font-size-14px pad-btm-10px">Apa kelebihan dan kekurangan website ini?</p>
-                    <div className="horiz-effect-center-small"></div>
+                    <div className="horiz-effect-center-small-red"></div>
                 </div>
                 <div className="flex jus-c-c align-itm-c gap-10px pad-top-10px pad-btm-10px">
                     <ChartPie />
                     <span>Stats in Project</span>
                 </div>
-                <div className="pad-btm-20px pos-rel">
-                    <div className="glow-w400-h100px tolol-red-old-btm-l-10-10ps"></div>
-                    <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Statistik Website paling <span className="glow-text">Sampah</span> juga sangat biasa dan Tidak <span className="glow-text">Menarik</span></h2>
+                <div className="pos-rel">
+                    <div className="glow-w400-h100px tolol-red-old-btm-r-10-10ps"></div>
+                </div>
+                <div className="pad-btm-20px">
+                    <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Statistik <span className="glow-text-red">Website</span> paling Sampah juga sangat biasa dan Tidak <span className="glow-text-red">Menarik</span></h2>
                     <p className="txt-align-c">Data analisis ini mungkin sangat tepat sehingga mungkin membuat anda tidak sanggup melihat realita yang sudah ada sehingga harapan anda pada kami menurun.</p>
                 </div>
             </section>
-            <section aria-labelledby="statistik-bacot" className="pad-bl-20px pad-top-48px pad-0-14px">
+            <section aria-labelledby="statistik-bacot" className="sec-visible-auto pos-rel sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex jus-c-c align-itm-c pad-top-10px pad-btm-40px">
                     <h2 id="statistik-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><Layers3 />Statistik</h2>
                 </div>
-                <div className="skills-score flex jus-c-c gap-24px pad-btm-40px">
-                    <div className="hover-after-effect-btm--24px pad-10px br-radius-50ps bg-blue-rd-c-at-0-0">
-                        <strong className="font-size-30px flex jus-c-c align-itm-c br-radius-50ps width-100px height-100px pad-10px bg-dark">91.7</strong>
+                <div className="flex flex-direc-clm jus-c-c align-itm-c pad-btm-40px gap-48px">
+                    <div className="flex flex-direc-clm jus-c-c align-itm-c gap-24px">
+                        <div className="hover-after-effect-btm--24px pad-10px br-radius-50ps bg-blue-rd-c-at-0-0">
+                            <strong className="font-size-30px flex jus-c-c align-itm-c br-radius-50ps width-100px height-100px pad-10px bg-dark">{score}</strong>
+                        </div>
+                        <h3 className="font-size-16px color-p pad-top-20px txt-align-c">Total Skor</h3>
+                    </div>
+                    <div className="grid grid-temp-clm-r4-to-r2 jus-c-c align-itm-c gap-24px">
+                        {listAllStats.map((itm) => (
+                            <div key={itm.id} className="flex flex-direc-clm jus-c-c align-itm-c gap-10px">
+                                <div className={`${classHoverAfterList(itm.id)} pad-10px br-radius-50ps ${classSkorList(itm.id)}`}>
+                                    <strong className="font-size-20px flex jus-c-c align-itm-c br-radius-50ps width-70px height-70px pad-10px bg-dark">{itm.skor}</strong>
+                                </div>
+                                <h3 className="font-size-14px color-p pad-top-20px txt-align-c">{itm.name}</h3>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className="grid grid-temp-clm-r5 jus-c-c align-itm-inherit pad-btm-40px gap-24px">
@@ -162,10 +196,10 @@ export default function Stats() {
                             className={`font-size-16px hover-effect-blue-to-red ${stats === btn.id ? 'box-sdw-red-important' : ''} bg-dark`}>{btn.label}</button>
                     ))}
                 </div>
-                <div className="sec-visible pos-rel flex flex-direc-clm jus-c-c align-itm-inherit gap-24px">
-                    <div className="glow-w300-h100px tolol-blue-top-l-10-10ps"></div>
-                    <div className="glow-w300-h100px tolol-red-old-btm-r-60-20ps"></div>
-                    <div className="glow-w300-h100px tolol-red-old-btm-l-10-30ps"></div>
+                <div className="flex pos-rel flex-direc-clm jus-c-c align-itm-inherit gap-24px">
+                    <div className="glow-w300-h100px tolol-blue-old-top-l-10-10ps"></div>
+                    <div className="glow-w300-h100px tolol-blue-old-top-l-60-10ps"></div>
+                    <div className="glow-w300-h100px tolol-red-old-btm-r-10-10ps"></div>
                     {isList.map((itm) => {
                         const IconComponent = itm.icn;
                         return (
@@ -174,10 +208,8 @@ export default function Stats() {
                                 <h3 className="flex jus-c-c align-itm-c gap-10px pad-top-20px pad-btm-20px"><IconComponent /> {itm.name}</h3>
                                 <div className={`flex-mx-764px-dir-clm width-100ps ${itm.id === 3 ? 'jus-c-c' : 'jus-c-sb'} pad-btm-40px ${classAlignList(itm.id)} ${classFlexDirecList(itm.id)} gap-48px`}>
                                     <div className="flex jus-c-c align-itm-fs gap-24px">
-                                        <div className={`skills-score`}>
-                                            <div className={`${classHoverAfterList(itm.id)} pad-10px br-radius-50ps ${classSkorList(itm.id)}`}>
-                                                <strong className="font-size-20px flex jus-c-c align-itm-c br-radius-50ps width-82px height-82px pad-10px bg-dark">{itm.skor}</strong>
-                                            </div>
+                                        <div className={`${classHoverAfterList(itm.id)} pad-10px br-radius-50ps ${classSkorList(itm.id)}`}>
+                                            <strong className="font-size-20px flex jus-c-c align-itm-c br-radius-50ps width-82px height-82px pad-10px bg-dark txt-align-c">{itm.skor}</strong>
                                         </div>
                                         <div className="flex flex-direc-clm gap-20px">
                                             <h4>{itm.mar_1}</h4>
@@ -186,7 +218,7 @@ export default function Stats() {
                                         </div>
                                     </div>
                                     <div className="card-hover max-w-400px box-sdw-1-2-6px pad-btm-20px">
-                                        <p className="font-size-14px color-p">{itm.desc_primary}</p>
+                                        <p className="font-size-16px color-p">{itm.desc_primary}</p>
                                     </div>
                                 </div>
                                 <p className="font-size-14px color-p pad-10px box-sdw-0-2-6px">{itm.desc_secondary}</p>

@@ -4,7 +4,10 @@
   --psa: #6366f1,
     #a855f7,
     #ec4899;
-  --bcb: rgb(42, 99, 206), rgb(36, 189, 209), #6366f1;
+  /*--bcb: rgb(42, 99, 206), rgb(36, 189, 209), #6366f1;*/
+  --bcb: rgb(59, 130, 246), rgb(56, 189, 248), #818cf8;
+  /*--bcb: rgb(37, 99, 235), rgb(34, 211, 238), #60a5fa; cyanhard*/
+  --rdr: rgb(185, 28, 28), rgb(239, 68, 68), #f87171;
   --purple: #a855f7;
   --pink: #ec4899;
   --bg-blue: rgb(42, 99, 206);
@@ -16,6 +19,7 @@
   --bg-red-old: red;
 
   --bg: black;
+  --bg-toggle-body: rgb(3, 3, 24);
   --bg-blur-card: #7373733b;
   --bg-blur-card-1: #cfcfcf3b;
   --bg-dark: white;
@@ -36,19 +40,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
-}
-
-html,
-body {
   width: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   box-sizing: border-box;
-  background: var(--bg);
+  background: var(--bg-toggle-body);
   color: var(--clr);
   font-family: 'Inter',
     ui-sans-serif,
@@ -60,11 +60,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
   transition: background 0.3s ease-in-out;
 }
 
 body.light {
   --bg: white;
+  --bg-toggle-body: white;
   --bg-blur-card: #00000008;
   --bg-blur-card-1: #cfcfcf3b;
   --bg-dark: black;
@@ -127,6 +129,12 @@ body.light {
     -webkit-text-fill-color: transparent;
   }
 
+  .glow-text-red {
+    background: linear-gradient(to right, var(--rdr));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .glow-w400-h100px {
     position: absolute;
     width: 400px;
@@ -157,6 +165,18 @@ body.light {
     right: 10%;
   }
 
+  .tolol-blue-old-top-l-10-10ps {
+    background: var(--bg-blue-old);
+    top: 10%;
+    left: 10%;
+  }
+
+  .tolol-blue-old-top-l-60-10ps {
+    background: var(--bg-blue-old);
+    top: 60%;
+    left: 10%;
+  }
+
   .tolol-blue-old-btm-r-10-10ps {
     background: var(--bg-blue-old);
     bottom: 10%;
@@ -173,6 +193,12 @@ body.light {
     background: var(--bg-red-old);
     bottom: 10%;
     left: 10%;
+  }
+
+  .tolol-red-old-btm-r-10-10ps {
+    background: var(--bg-red-old);
+    bottom: 10%;
+    right: 10%;
   }
 
   .tolol-red-old-btm-l-10-30ps {
@@ -273,6 +299,12 @@ body.light {
     text-align: center;
   }
 
+  /* -- overflow -- */
+
+  .overflow-x-hide {
+    overflow-x: hidden;
+  }
+
   /* -- Display -- */
 
   .none {
@@ -371,7 +403,8 @@ body.light {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .grid-temp-clm-r4 {
+  .grid-temp-clm-r4,
+  .grid-temp-clm-r4-to-r2 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
@@ -530,6 +563,10 @@ body.light {
     width: 100%;
   }
 
+  .width-70px {
+    width: 70px;
+  }
+
   .width-82px {
     width: 82px;
   }
@@ -566,6 +603,10 @@ body.light {
     height: 18px;
   }
 
+  .height-70px {
+    height: 70px;
+  }
+
   .height-82px {
     height: 82px;
   }
@@ -594,19 +635,19 @@ body.light {
   }
 
   .bg-blue-rd-c-at-0-0 {
-    background: radial-gradient(circle at 0 0, var(--bg), blue 96%);
+    background: radial-gradient(circle at 0 0, var(--bg) 8%, blue 96%);
   }
 
   .bg-red-ld-to-r-b-35ps {
-    background: linear-gradient(to bottom left, red, var(--bg) 35%);
+    background: linear-gradient(to bottom left, red 10%, var(--bg) 35%);
   }
 
   .bg-red-ld-to-r-b-30ps {
-    background: linear-gradient(to bottom left, red, var(--bg) 30%);
+    background: linear-gradient(to bottom left, red 10%, var(--bg) 30%);
   }
 
   .bg-blue-ld-to-r-b-35ps {
-    background: linear-gradient(to bottom left, var(--bg) 35%, var(--bg-blue-old));
+    background: linear-gradient(to bottom left, var(--bg) 35%, var(--bg-blue-old) 70%);
   }
 
   .bg-blue-circle {
@@ -739,6 +780,15 @@ body.light {
 
   .box-sdw-0-2-6px-dark-blue {
     box-shadow: 1px 2px 6px var(--clr), -2px -2px 6px var(--bg-blue-old);
+  }
+
+  .box-sdw-0-2-6px-dark-red {
+    box-shadow: 1px 2px 6px var(--clr), -2px -2px 6px var(--bg-red-old);
+  }
+
+  .box-sdw-2-2-6px-dark-blue-red {
+    box-shadow: 2px 2px 6px red,
+      2px -2px 6px blue;
   }
 
   .box-sdw-red-important {
@@ -914,7 +964,7 @@ body.light {
     width: 100%;
     height: 2px;
     bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-blue-old), transparent 120%, transparent 200%);
     transform: translateX(25%);
     transition: width 0.3s ease-in-out;
   }
@@ -923,7 +973,7 @@ body.light {
     width: 100%;
     height: 2px;
     bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-red-old), var(--bg) 120%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-red-old), transparent 120%, transparent 200%);
     transform: translateX(25%);
     transition: width 0.3s ease-in-out;
   }
@@ -932,7 +982,7 @@ body.light {
     width: 100%;
     height: 2px;
     bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-red-old), var(--bg) 120%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-red-old), transparent 120%, transparent 200%);
     transform: translateX(-25%);
     transition: width 0.3s ease-in-out;
   }
@@ -941,7 +991,7 @@ body.light {
     width: 100%;
     height: 2px;
     bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-blue-old), transparent 120%, transparent 200%);
     transform: translateX(-25%);
     transition: width 0.3s ease-in-out;
   }
@@ -950,7 +1000,16 @@ body.light {
     width: 100%;
     height: 2px;
     bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 36%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-blue-old), transparent 36%, transparent 200%);
+    transform: translateX(0);
+    transition: width 0.3s ease-in-out;
+  }
+
+  .horiz-effect-center-small-red {
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    background: radial-gradient(circle at center, var(--bg-red-old), transparent 36%, transparent 200%);
     transform: translateX(0);
     transition: width 0.3s ease-in-out;
   }
@@ -959,7 +1018,7 @@ body.light {
     width: 100%;
     height: 2px;
     bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 80%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-blue-old), transparent 80%, transparent 200%);
     transform: translateX(0);
     transition: width 0.3s ease-in-out;
   }
@@ -968,7 +1027,7 @@ body.light {
     width: 100%;
     height: 2px;
     bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-cyan-old), var(--bg) 80%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-cyan-old), transparent 80%, transparent 200%);
     transform: translateX(0);
     transition: width 0.3s ease-in-out;
   }
@@ -1021,7 +1080,7 @@ body.light {
     right: 50%;
     height: 2px;
     bottom: -24px;
-    background: radial-gradient(circle at center, var(--bg-red-old), var(--bg) 120%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-red-old), transparent 120%, transparent 200%);
     transform: translateX(50%);
     transition: width 0.3s ease-in-out;
   }
@@ -1033,7 +1092,7 @@ body.light {
     right: 50%;
     height: 2px;
     bottom: -24px;
-    background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-blue-old), transparent 120%, transparent 200%);
     transform: translateX(50%);
     transition: width 0.3s ease-in-out;
   }
@@ -1045,7 +1104,7 @@ body.light {
     right: 50%;
     height: 2px;
     bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%, var(--bg) 200%);
+    background: radial-gradient(circle at center, var(--bg-blue-old), transparent 120%, transparent 200%);
     transform: translateX(50%);
     transition: width 0.3s ease-in-out;
   }
@@ -1056,6 +1115,18 @@ body.light {
     width: 100%;
   }
 
+  /* --- Reveal --- */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(300px);
+    transition: transform 0.5s ease-in-out, opacity 1.5s ease-in-out;
+  }
+
+  .reveal.rev {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1192px) {
@@ -1089,6 +1160,10 @@ body.light {
   .grid-temp-clm-r3,
   .grid-temp-clm-r4 {
     grid-template-columns: 1fr;
+  }
+
+  .grid-temp-clm-r4-to-r2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
