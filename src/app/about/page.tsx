@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect /*useMemo, useState*/ } from "react"
 
-interface About {
+/*interface About {
     id: number;
     title: string;
     name: string;
@@ -30,10 +30,10 @@ const listAboutAll: About[] = Object.values(listAbout);
 const listAboutPertama = [listAbout.Pertama];
 const listAboutKedua = [listAbout.Kedua];
 
-type AboutType = 'all' | 'p1' | 'p2';
+type AboutType = 'all' | 'p1' | 'p2';*/
 
 export default function About() {
-    const [search, setSearch] = useState('');
+    /*const [search, setSearch] = useState('');
     const [isItem, setIsItem] = useState<AboutType>('all');
 
     const listSearch: Record<AboutType, About[]> = {
@@ -55,7 +55,7 @@ export default function About() {
             itm.name.toLowerCase().includes(search.toLowerCase()) ||
             itm.title.toLowerCase().includes(search.toLowerCase())
         )
-    }, [search]);
+    }, [search]);*/
 
     useEffect(() => {
         const deff = new IntersectionObserver((entries) => {
