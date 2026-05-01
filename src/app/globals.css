@@ -21,7 +21,7 @@
   --bg: black;
   --bg-toggle-body: rgb(3, 3, 24);
   --bg-blur-card: #7373733b;
-  --bg-blur-card-1: #cfcfcf3b;
+  --bg-blur-card-1: #97979733;
   --bg-dark: white;
   --bg-dark-op: rgba(0, 0, 0, 0.3);
   --bg-white: rgb(255, 255, 255);
@@ -67,7 +67,7 @@ body {
 body.light {
   --bg: white;
   --bg-toggle-body: white;
-  --bg-blur-card: #00000008;
+  --bg-blur-card: #ffffffe9;
   --bg-blur-card-1: #cfcfcf3b;
   --bg-dark: black;
   --bg-dark-op: rgba(255, 255, 255, 0.3);
@@ -153,6 +153,15 @@ body.light {
     z-index: -1;
   }
 
+  .glow-w100-h100px {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+  }
+
   .tolol-blue-top-l-10-10ps {
     background: var(--bg-blue);
     top: 10%;
@@ -181,6 +190,24 @@ body.light {
     background: var(--bg-blue-old);
     bottom: 10%;
     right: 10%;
+  }
+
+  .tolol-blue-old-btm-r-0-10ps {
+    background: var(--bg-blue-old);
+    bottom: 0%;
+    right: 10%;
+  }
+
+  .tolol-blue-old-btm-l-30-10ps {
+    background: var(--bg-blue-old);
+    bottom: 30%;
+    left: 10%;
+  }
+
+  .tolol-blue-old-btm-l-30-50ps {
+    background: var(--bg-blue-old);
+    bottom: 30%;
+    left: 50%;
   }
 
   .tolol-red-old-btm-r-60-20ps {
@@ -634,6 +661,10 @@ body.light {
     background: var(--bg-blur-card);
   }
 
+  .bg-blur-card-1 {
+    background: var(--bg-blur-card-1);
+  }
+
   .bg-blue-rd-c-at-0-0 {
     background: radial-gradient(circle at 0 0, var(--bg) 8%, blue 96%);
   }
@@ -687,6 +718,11 @@ body.light {
 
   .bg-ln-gr {
     background: linear-gradient(to right, black, white);
+  }
+
+  .bg-transparent {
+    background: transparent;
+    color: var(--clr);
   }
 
   /* -- Backdrop-Filter -- */
@@ -926,21 +962,18 @@ body.light {
     padding: 10px 20px;
     border: 1px solid var(--br-op);
     border-radius: 12px;
-    backdrop-filter: blur(8px);
   }
 
   .card-small {
     padding: 10px 10px;
     border: 1px solid var(--br-op);
     border-radius: 12px;
-    backdrop-filter: blur(8px);
   }
 
   .card {
     padding: 20px 20px;
     border: 1px solid var(--br-op);
     border-radius: 12px;
-    backdrop-filter: blur(8px);
   }
 
   .card-hover,
@@ -948,7 +981,6 @@ body.light {
     padding: 20px 20px;
     border: 1px solid var(--br-op);
     border-radius: 12px;
-    backdrop-filter: blur(8px);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     will-change: transform, box-shadow;
   }
@@ -957,7 +989,6 @@ body.light {
     padding: 40px 40px;
     border: 1px solid var(--br-op);
     border-radius: 12px;
-    backdrop-filter: blur(8px);
   }
 
   .horiz-effect-left {

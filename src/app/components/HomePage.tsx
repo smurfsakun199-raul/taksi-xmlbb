@@ -1,6 +1,5 @@
 'use client';
-
-import { useEffect } from "react"
+import Reveal from "@/app/hooks/Reveal";
 
 import {
     Compass,
@@ -142,29 +141,13 @@ const skillsBacot = [
 ];
 
 export default function HomePage() {
-    useEffect(() => {
-        const deff = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    (entry.target as HTMLElement).classList.add('rev');
-                    deff.unobserve(entry.target);
-                }
-
-            });
-        }, { threshold: 0.1 });
-
-        const showRev = document.querySelectorAll('.reveal');
-
-        showRev.forEach((el) => {
-            deff.observe(el);
-        });
-
-        return () => deff.disconnect();
-    }, []);
+    Reveal();
 
     return (
         <main className="max-w-1210px margin-auto">
-            <section aria-labelledby="bacot-title" className="reveal sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
+            <section
+                aria-labelledby="bacot-title"
+                className="reveal sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
                     <h1 id="project-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">PortFolio</h1>
                     <p className="font-size-14px txt-align-c pad-btm-10px">Merepresentasikan website Portfolio yang Tolol banget juga biasa</p>
@@ -188,7 +171,7 @@ export default function HomePage() {
                                 <h2 className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</h2>
                             </div>
                         </div>
-                        <div className="grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">
+                        <div className="pos-rel grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">
                             {listYear.map((item) => (
                                 <div key={item.id} className="card-hover bg-blur-card br-radius-12px">
                                     <div className="flex align-itm-c pad-btm-10px gap-10px">
@@ -208,7 +191,7 @@ export default function HomePage() {
                         <div className="glow tolol-noname"></div>
                     </div>
 
-                    <div className="card-hover-dig-to-left bg-blur-card">
+                    <div className="pos-rel card-hover-dig-to-left bg-blur-card">
                         <div className="flex jus-c-sb align-itm-c gap-10px pad-btm-10px">
                             <div className="icn-circle-svg flex gap-10px">
                                 <span className="bg-blue-circle"></span>
@@ -217,7 +200,7 @@ export default function HomePage() {
                             </div>
                             <p className="font-size-12px">Art Design</p>
                         </div>
-                        <div className="card flex flex-direc-clm jus-c-sb">
+                        <div className="card flex flex-direc-clm jus-c-sb bg-blur-card-1">
                             <h2 className="font-size-12px pad-btm-10px color-p">Fokus utama</h2>
                             <div className="flex jus-c-c pad-btm-10px gap-10px">
                                 <h3 className="font-size-18px">Design sistem tuk gaya Tolol Modern</h3>
@@ -232,7 +215,7 @@ export default function HomePage() {
                             </div>
                         </div>
                         <div className="grid grid-temp-clm-r2 jus-c-c align-itm-inherit gap-10px pad-top-10px">
-                            <div className="card">
+                            <div className="card bg-blur-card-1">
                                 <h2 className="font-size-14px color-p pad-btm-10px">WorkFlow</h2>
                                 {lolList.map((item) => (
                                     <div key={item.id} className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
@@ -241,7 +224,7 @@ export default function HomePage() {
                                     </div>
                                 ))}
                             </div>
-                            <div className="card">
+                            <div className="card bg-blur-card-1">
                                 <h2 className="font-size-14px color-p pad-btm-10px">FlowWork</h2>
                                 <div className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
                                     <span className="font-size-16px pad-btm-10px"><Dna /></span>
@@ -252,7 +235,7 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section aria-labelledby="road-bacot" className="sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
+            <section aria-labelledby="road-bacot" className="sec-visible-auto pos-rel pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="horiz-effect-left"></div>
                 <div className="flex pad-top-10px pad-btm-20px">
                     <div className="pad-4-18px br-op br-radius-12px bg-blur-card">

@@ -99,18 +99,18 @@ export default function Header() {
                             type="button"
                             aria-label="Toggle Theme"
                             onClick={toggleTheme}
-                            className="icn-svg-theme bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
+                            className="icn-svg-theme cursor-pnt bg-blur-card flex align-itm-fe bg-white outline-op br-radius-12px gap-4px">
                             {isLight === 'light' ? (
-                                <><Sun /> Light</>
+                                <><Sun /></>
                             ) : (
-                                <><Moon /> Darkz</>
+                                <><Moon /></>
                             )}
                         </button>
                         <button
                             aria-label="showLink"
                             aria-pressed={downLink}
                             onClick={() => setDownLink(prev => !prev)}
-                            className="bg-dark font-size-0 cursor-pnt dis-mx-764-visible"><TextAlignJustify />
+                            className="bg-transparent font-size-0 cursor-pnt dis-mx-764-visible"><TextAlignJustify />
                         </button>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 'use client';
 import { Library } from "lucide-react";
-import { useEffect } from "react";
+import Reveal from "@/app/hooks/Reveal";
 
 export const metadata = {
     title: 'Project Web',
@@ -47,24 +47,8 @@ const listProjek = [
 ];
 
 export default function Projects() {
-    useEffect(() => {
-        const deff = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    (entry.target as HTMLElement).classList.add('rev');
-                    deff.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+    Reveal();
 
-        const showRev = document.querySelectorAll('.reveal');
-
-        showRev.forEach((el) => {
-            deff.observe(el);
-        });
-
-        return () => deff.disconnect();
-    }, [])
     return (
         <main className="max-w-1210px margin-auto">
             <section aria-labelledby="project-bacot" className="reveal sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">

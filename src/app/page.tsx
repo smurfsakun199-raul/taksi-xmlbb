@@ -11,8 +11,5 @@ export const metadata = {
 
 
 export default function AlahBacot() {
-
-    return (
-        <HomePage />
-    )
+    return <HomePage />
 }

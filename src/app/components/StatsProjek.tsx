@@ -1,6 +1,8 @@
 'use client';
 import { Accessibility, ChartPie, CircleGauge, Layers3, LucideIcon, Orbit, Sparkles } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
+import Reveal from "@/app/hooks/Reveal";
+
 const score = 93.4;
 
 interface Stats {
@@ -8,14 +10,16 @@ interface Stats {
     skor: number;
     icn: LucideIcon;
     name: string;
-    mar_1: string;
-    mar_2: string;
-    mar_3: string;
-    desc_primary: string;
-    desc_secondary: string;
+    mar_1?: string | null;
+    mar_2?: string;
+    mar_3?: string;
+    desc_primary?: string;
+    desc_secondary?: string;
 };
 
-const statsMap: Record<string, Stats> = {
+type pass = 'Performance' | 'Accesbility' | 'Best' | 'Seo';
+
+const statsMap: Record<pass, Stats> = {
     Performance: {
         id: 1,
         skor: 97,
@@ -105,7 +109,6 @@ const classSkorList = (id: number) => {
 type StatsType = 'all' | 's1' | 's2' | 's3' | 's4';
 
 
-
 export default function Stats() {
 
     const [stats, setStats] = useState<StatsType>('all');
@@ -126,32 +129,22 @@ export default function Stats() {
         { id: 's2', label: 'Acces' },
         { id: 's3', label: 'Best' },
         { id: 's4', label: 'SEO' }
-    ] as const;
+    ];
 
-    useEffect(() => {
-        const deff = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    (entry.target as HTMLElement).classList.add('rev');
-                    deff.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+    // Reveal Tag
+    Reveal();
 
-        const showRev = document.querySelectorAll('.reveal');
+    const divRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
-        showRev.forEach((el) => {
-            deff.observe(el);
-        });
-
-        return () => deff.disconnect();
-    }, []);
+    const scrollToDiv = (id: string) => {
+        divRefs.current[id]?.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <main className="max-w-1210px margin-auto">
             <section aria-labelledby="stats-bacot" className="reveal sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
-                    <h1 id="stats-bacot" className="font-size-3rem glow-text-red box-sdw-0-2-6px-dark-red">Stats</h1>
+                    <h1 onClick={() => scrollToDiv('lol')} id="stats-bacot" className="font-size-3rem glow-text-red box-sdw-0-2-6px-dark-red">Stats</h1>
                     <p className="font-size-14px pad-btm-10px">Apa kelebihan dan kekurangan website ini?</p>
                     <div className="horiz-effect-center-small-red"></div>
                 </div>
@@ -167,12 +160,13 @@ export default function Stats() {
                     <p className="txt-align-c">Data analisis ini mungkin sangat tepat sehingga mungkin membuat anda tidak sanggup melihat realita yang sudah ada sehingga harapan anda pada kami menurun.</p>
                 </div>
             </section>
-            <section aria-labelledby="statistik-bacot" className="sec-visible-auto pos-rel sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
+            <section ref={(el) => { divRefs.current['lol'] = el; }} aria-labelledby="statistik-bacot" className="sec-visible-auto pos-rel sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex jus-c-c align-itm-c pad-top-10px pad-btm-40px">
                     <h2 id="statistik-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><Layers3 />Statistik</h2>
                 </div>
                 <div className="flex flex-direc-clm jus-c-c align-itm-c pad-btm-40px gap-48px">
-                    <div className="flex flex-direc-clm jus-c-c align-itm-c gap-24px">
+                    <div className="flex flex-direc-clm jus-c-c align-itm-c gap-24px pos-rel">
+                        <div className="glow-w300-h100px tolol-blue-old-top-l-60-10ps"></div>
                         <div className="hover-after-effect-btm--24px pad-10px br-radius-50ps bg-blue-rd-c-at-0-0">
                             <strong className="font-size-30px flex jus-c-c align-itm-c br-radius-50ps width-100px height-100px pad-10px bg-dark">{score}</strong>
                         </div>
@@ -193,17 +187,19 @@ export default function Stats() {
                     {buttonStats.map((btn) => (
                         <button key={btn.id}
                             onClick={() => setStats(btn.id)}
-                            className={`font-size-16px hover-effect-blue-to-red ${stats === btn.id ? 'box-sdw-red-important' : ''} bg-dark`}>{btn.label}</button>
+                            className={`cursor-pnt font-size-16px hover-effect-blue-to-red ${stats === btn.id ? 'box-sdw-red-important' : ''} bg-dark`}>{btn.label}</button>
                     ))}
                 </div>
-                <div className="flex pos-rel flex-direc-clm jus-c-c align-itm-inherit gap-24px">
+                <div ref={(el) => { divRefs.current['lol'] = el; }} className="flex pos-rel flex-direc-clm jus-c-c align-itm-inherit gap-24px">
                     <div className="glow-w300-h100px tolol-blue-old-top-l-10-10ps"></div>
                     <div className="glow-w300-h100px tolol-blue-old-top-l-60-10ps"></div>
                     <div className="glow-w300-h100px tolol-red-old-btm-r-10-10ps"></div>
                     {isList.map((itm) => {
                         const IconComponent = itm.icn;
                         return (
-                            <div key={itm.id} className={`flex flex-direc-clm pad-10px ${classAlignList(itm.id)}`}>
+                            <div
+                                key={itm.id}
+                                className={`flex flex-direc-clm pad-10px ${classAlignList(itm.id)}`}>
                                 <div className={`${classHorizEffectList(itm.id)}`}></div>
                                 <h3 className="flex jus-c-c align-itm-c gap-10px pad-top-20px pad-btm-20px"><IconComponent /> {itm.name}</h3>
                                 <div className={`flex-mx-764px-dir-clm width-100ps ${itm.id === 3 ? 'jus-c-c' : 'jus-c-sb'} pad-btm-40px ${classAlignList(itm.id)} ${classFlexDirecList(itm.id)} gap-48px`}>
@@ -230,5 +226,3 @@ export default function Stats() {
         </main>
     )
 }
-
-
