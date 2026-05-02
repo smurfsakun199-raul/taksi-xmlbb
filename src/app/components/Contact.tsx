@@ -2,6 +2,8 @@
 import Reveal from "@/app/hooks/Reveal";
 
 export default function Contact() {
+
+    // Reveal Tag
     Reveal();
 
     return (

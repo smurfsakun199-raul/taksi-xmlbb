@@ -116,7 +116,7 @@ export default function Header() {
                 </div>
             </nav>
             <div className="horiz-effect-center"></div>
-            <div className={`pos-abs z-index-1000 width-100ps ${downLink === true ? 'icn-item-link-op1-important' : ''} icn-item_764-svg grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
+            <div className={`pos-abs z-index-1000 width-100ps ${downLink === true ? 'icn-item-link-op' : 'icn-item_764-svg'} grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
                 {listItemLinksBacot.map((item) => {
                     const linkActive = pathName === item.link;
                     return (

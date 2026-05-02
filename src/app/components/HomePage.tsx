@@ -141,6 +141,8 @@ const skillsBacot = [
 ];
 
 export default function HomePage() {
+
+    // Reveal Tag
     Reveal();
 
     return (

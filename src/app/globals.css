@@ -885,12 +885,13 @@ body.light {
     height: 18px;
   }
 
-  .icn-item-link-op1-important {
-    display: grid !important;
-    transform: translateY(0) !important;
-    opacity: 1 !important;
-    pointer-events: visible !important;
-    z-index: 10 !important;
+  .icn-item-link-op {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: visible;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    transition: 0.3s ease-in-out;
   }
 
   .icn-item_764-svg {
@@ -898,17 +899,18 @@ body.light {
     transform: translateY(-100px);
     transition: 0.3s ease-in-out;
     pointer-events: none;
-    backdrop-filter: blur(8px);
     z-index: -1;
   }
 
-  .icn-item_764-svg a {
+  .icn-item_764-svg a,
+  .icn-item-link-op a {
     position: relative;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     will-change: transform, box-shadow;
   }
 
-  .icn-item_764-svg a::after {
+  .icn-item_764-svg a::after,
+  .icn-item-link-op a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -921,23 +923,27 @@ body.light {
     transition: 0.3s ease-in-out;
   }
 
-  .icn-item_764-svg a:hover {
+  .icn-item_764-svg a:hover,
+  .icn-item-link-op a:hover {
     box-shadow: 0px 0px 6px var(--bg-blue);
     transform: translateY(-1px);
   }
 
-  .icn-item_764-svg a:hover::after {
+  .icn-item_764-svg a:hover::after,
+  .icn-item-link-op a:hover::after {
     width: 100%;
   }
 
-  .icn-item_764-svg a {
+  .icn-item_764-svg a,
+  .icn-item-link-op a {
     display: flex;
     align-items: center;
     gap: 4px;
     font-size: 0.80rem;
   }
 
-  .icn-item_764-svg svg {
+  .icn-item_764-svg svg,
+  .icn-item-link-op svg {
     width: 18px;
     height: 18px;
   }

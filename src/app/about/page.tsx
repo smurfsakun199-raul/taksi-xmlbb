@@ -3,6 +3,7 @@ import Reveal from "../hooks/Reveal";
 
 export default function About() {
 
+    // Reveal Tag
     Reveal();
 
     return (
