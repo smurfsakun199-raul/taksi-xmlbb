@@ -17,7 +17,6 @@ import {
     UserRound,
     ArrowUp,
     ChevronUp,
-    ChevronDown,
 } from "lucide-react";
 
 const listItemLinksBacot = [
