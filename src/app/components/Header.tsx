@@ -138,7 +138,6 @@ export default function Header() {
             </nav>
             <div className="horiz-effect-center"></div>
             <div
-                aria-hidden={downLink == false ? true : false}
                 className={`pos-abs z-index-1000 width-100ps ${downLink == true ? 'icn-item-link-op' : 'icn-item_764-svg'} grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
                 {listItemLinksBacot.map((item) => {
                     const linkActive = pathName === item.link;
@@ -162,7 +161,6 @@ export default function Header() {
                 </button>
             </div>
             <div
-                aria-hidden={contact == false ? true : false}
                 className={`pos-abs width-100ps pad-10px ${contact == true ? 'transY-op1 z-index-1 pnt-e-visible' : 'transY-op0-100px z-index--1 pnt-e-none'}`}>
                 <div className="flex flex-direc-clm jus-c-c align-itm-c margin-auto">
                     <div>
@@ -191,12 +189,13 @@ export default function Header() {
                 </div>
             </div>
             <div
-                aria-label="Up To Navigation"
                 onClick={() => scrollToId('nav')}
-                className="pos-fix pad-10px br-radius-50ps bottom-4ps right-2ps cursor-pnt z-index-1">
-                <span>
+                className="pos-fix pad-10px br-radius-50ps bottom-4ps right-2ps z-index-1">
+                <button
+                    className="bg-transparent cursor-pnt"
+                    aria-label="UpToNavigation">
                     <ArrowUp />
-                </span>
+                </button>
             </div>
         </header>
 
