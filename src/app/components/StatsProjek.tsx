@@ -1,5 +1,5 @@
 'use client';
-import { Accessibility, ChartPie, CircleGauge, Layers3, LucideIcon, Orbit, Sparkles } from "lucide-react";
+import { Accessibility, ChartPie, CircleGauge, Layers3, LucideIcon, Orbit, Sparkles, Telescope } from "lucide-react";
 import { useRef, useState } from "react";
 import Reveal from "@/app/hooks/Reveal";
 
@@ -123,13 +123,13 @@ export default function Stats() {
 
     const isList = daftarStatistik[stats];
 
-    const buttonStats: { id: StatsType, label: string }[] = [
-        { id: 'all', label: 'All' },
-        { id: 's1', label: 'Perform' },
-        { id: 's2', label: 'Acces' },
-        { id: 's3', label: 'Best' },
-        { id: 's4', label: 'SEO' }
-    ];
+    const buttonStats: { id: StatsType, icn: LucideIcon, label: string }[] = [
+        { id: 'all', icn: Telescope, label: 'All' },
+        { id: 's1', icn: CircleGauge, label: 'Perform' },
+        { id: 's2', icn: Accessibility, label: 'Acces' },
+        { id: 's3', icn: Sparkles, label: 'Best' },
+        { id: 's4', icn: Orbit, label: 'SEO' }
+    ] as const;
 
     // Reveal Tag
     Reveal();
@@ -144,19 +144,19 @@ export default function Stats() {
         <main className="max-w-1210px margin-auto">
             <section aria-labelledby="stats-bacot" className="reveal sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
-                    <h1 onClick={() => scrollToDiv('lol')} id="stats-bacot" className="font-size-3rem glow-text-red box-sdw-0-2-6px-dark-red">Stats</h1>
+                    <h1 onClick={() => scrollToDiv('lol')} id="stats-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">Stats</h1>
                     <p className="font-size-14px pad-btm-10px">Apa kelebihan dan kekurangan website ini?</p>
-                    <div className="horiz-effect-center-small-red"></div>
+                    <div className="horiz-effect-center-small"></div>
                 </div>
                 <div className="flex jus-c-c align-itm-c gap-10px pad-top-10px pad-btm-10px">
                     <ChartPie />
                     <span>Stats in Project</span>
                 </div>
                 <div className="pos-rel">
-                    <div className="glow-w400-h100px tolol-red-old-btm-r-10-10ps"></div>
+                    <div className="glow-w400-h100px tolol-blue-old-btm-r-10-10ps"></div>
                 </div>
                 <div className="pad-btm-20px">
-                    <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Statistik <span className="glow-text-red">Website</span> paling Sampah juga sangat biasa dan Tidak <span className="glow-text-red">Menarik</span></h2>
+                    <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Statistik <span className="glow-text">Website</span> paling Sampah juga sangat biasa dan Tidak <span className="glow-text">Menarik</span></h2>
                     <p className="txt-align-c">Data analisis ini mungkin sangat tepat sehingga mungkin membuat anda tidak sanggup melihat realita yang sudah ada sehingga harapan anda pada kami menurun.</p>
                 </div>
             </section>
@@ -187,13 +187,12 @@ export default function Stats() {
                     {buttonStats.map((btn) => (
                         <button key={btn.id}
                             onClick={() => setStats(btn.id)}
-                            className={`cursor-pnt font-size-16px hover-effect-blue-to-red ${stats === btn.id ? 'box-sdw-red-important' : ''} bg-dark`}>{btn.label}</button>
+                            className={`cursor-pnt font-size-16px flex jus-c-c align-itm-c ${stats === btn.id ? 'box-sdw-blue' : 'transZ-4'} br-op br-radius-12px bg-transparent gap-10px`}>{<btn.icn />}{btn.label}</button>
                     ))}
                 </div>
                 <div ref={(el) => { divRefs.current['lol'] = el; }} className="flex pos-rel flex-direc-clm jus-c-c align-itm-inherit gap-24px">
                     <div className="glow-w300-h100px tolol-blue-old-top-l-10-10ps"></div>
-                    <div className="glow-w300-h100px tolol-blue-old-top-l-60-10ps"></div>
-                    <div className="glow-w300-h100px tolol-red-old-btm-r-10-10ps"></div>
+                    <div className="glow-w300-h100px tolol-blue-old-btm-r-10-10ps"></div>
                     {isList.map((itm) => {
                         const IconComponent = itm.icn;
                         return (
@@ -213,8 +212,8 @@ export default function Stats() {
                                             <h4>{itm.mar_3}</h4>
                                         </div>
                                     </div>
-                                    <div className="card-hover max-w-400px box-sdw-1-2-6px pad-btm-20px">
-                                        <p className="font-size-16px color-p">{itm.desc_primary}</p>
+                                    <div className="card-hover max-w-400px bg-dark-to-light box-sdw-1-2-6px pad-btm-20px">
+                                        <p className="font-size-16px color-white-op">{itm.desc_primary}</p>
                                     </div>
                                 </div>
                                 <p className="font-size-14px color-p pad-10px box-sdw-0-2-6px">{itm.desc_secondary}</p>

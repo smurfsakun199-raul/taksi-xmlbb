@@ -18,6 +18,9 @@ import {
     Terminal,
     TrendingUpDown,
     MoonStar,
+    LucideIcon,
+    ChartNoAxesGantt,
+    Wrench,
 } from "lucide-react";
 
 const listYear = [
@@ -88,21 +91,21 @@ const roadLol = [
         id: 1,
         years: 2026,
         month: 'April',
-        title: 'Perjalanan menuju harapan yang tidak ada',
+        title: 'Perjalanan',
         desc: 'Mempertanyakan arti dari "Apakah harapan itu ada?'
     },
     {
         id: 2,
         years: 2062,
         month: 'Mei',
-        title: 'Ujian yang tidak mengenal batas rasional',
+        title: 'Ujian',
         desc: 'Masa yang dimana "Mengenal apa itu harapan"'
     },
     {
         id: 3,
         years: 2099,
         month: 'November',
-        title: 'Mengetahui Determinasi yang menyakitkan',
+        title: 'Determinasi',
         desc: 'Kesadaran membuka jawaban terpendam.'
     },
 ];
@@ -140,8 +143,22 @@ const skillsBacot = [
     }
 ];
 
-export default function HomePage() {
+const listTools: { id: number, icn: LucideIcon, category: string, tool: string }[] = [
+    { id: 1, icn: Code, category: 'Normal Flex', tool: 'Visual Studio Code' },
+    { id: 2, icn: ChartNoAxesGantt, category: 'HardCore', tool: 'Nano' },
+];
 
+const classBgCardId = (id: number) => {
+    if ([1].includes(id)) return 'bg-blur-card';
+    return 'bg-dark-to-light'
+}
+
+const classColor = (id: number) => {
+    if ([2, 3, 4].includes(id)) return 'color-white-op';
+    return 'color-p'
+}
+
+export default function HomePage() {
     // Reveal Tag
     Reveal();
 
@@ -167,71 +184,100 @@ export default function HomePage() {
                             <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Design Portfolio dengan memadukan <span className="glow-text">Ketololan</span> yang <span className="glow-text">Unik, Rapi</span> dan biasa</h2>
                             <p className="txt-align-c">Deskripsi ini mungkin membuat anda akan menyesal jika sampai membacanya sampai selesai,dikarenakan kata yang saya gunakan merepetisi sebuah kata menjadi berulang ulang,dan akhirnya yang anda dapat hanyalah tautologi dan tak menguntungkan anda.</p>
                         </div>
-                        <div className="horiz-effect-right"></div>
-                        <div className="flex pad-top-10px pad-btm-20px">
-                            <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
-                                <h2 className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</h2>
-                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="info-bacot" className="sec-visible-auto pos-rel pad-bl-20px pad-top-48px pad-0-14px">
+                <div className="horiz-effect-right"></div>
+                <div className="pad-top-100px pad-btm-40px">
+                    <h2 className="font-size-24px txt-align-c pad-btm-40px">Bahasa pemrograman apa yang digunakan oleh Author yang ga jelas ini?</h2>
+                    <div className="flex pad-top-10px pad-btm-20px">
+                        <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
+                            <h3 className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</h3>
                         </div>
-                        <div className="pos-rel grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">
-                            {listYear.map((item) => (
-                                <div key={item.id} className="card-hover bg-blur-card br-radius-12px">
-                                    <div className="flex align-itm-c pad-btm-10px gap-10px">
-                                        {item.title}
-                                        <span className="font-size-12px color-p">{item.name}</span>
-                                    </div>
-                                    <div className="icn-svg-18wh flex jus-c-l align-itm-c pad-btm-10px gap-10px">
-                                        {item.icn}
-                                        <h3 className="font-size-18px">{item.code}</h3>
-                                    </div>
-                                    <div>
-                                        <p className="font-size-14px">{item.desk}</p>
-                                    </div>
+                    </div>
+                    <div className="pos-rel grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">
+                        {listYear.map((item) => (
+                            <div key={item.id} className={`card-hover ${classBgCardId(item.id)}`}>
+                                <div className="flex align-itm-c pad-btm-10px gap-10px">
+                                    {item.title}
+                                    <h4 className={`font-size-12px ${classColor(item.id)}`}>{item.name}</h4>
+                                </div>
+                                <div className="icn-svg-18wh flex jus-c-l align-itm-c pad-btm-10px gap-10px">
+                                    {item.icn}
+                                    <h5 className="font-size-18px">{item.code}</h5>
+                                </div>
+                                <div>
+                                    <p className={`font-size-14px ${classColor(item.id)}`}>{item.desk}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="pad-btm-40px">
+                    <div className="pad-top-48px pad-btm-40px">
+                        <h2 className="font-size-24px txt-align-c">Tools apa yang digunakan tuk pengembangan Projek biasa ini?</h2>
+                    </div>
+                    <div className="flex pad-top-10px pad-btm-20px">
+                        <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
+                            <h3 className="font-size-16px flex align-itm-c gap-10px"><Wrench /> Tools</h3>
+                        </div>
+                    </div>
+                    <div className="grid grid-temp-clm-r2 jus-c-c align-itm-c gap-24px">
+                        {listTools.map((itm) => (
+                            <div key={itm.id} className={`card-hover ${classBgCardId(itm.id)}`}>
+                                <h3 className="font-size-18px pad-btm-20px">
+                                    {itm.category}
+                                </h3>
+                                <h4 className="flex align-itm-c gap-10px">{<itm.icn />}{itm.tool}</h4>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="pad-top-48px pad-btm-40px">
+                    <h2 className="font-size-24px txt-align-c">Daya tarik apa yang membuat website ini sangat Tolol?</h2>
+                </div>
+                <div className="pos-rel card-hover-dig-to-left bg-dark-to-light">
+                    <div className="flex jus-c-sb align-itm-c gap-10px pad-btm-10px">
+                        <div className="icn-circle-svg flex gap-10px">
+                            <span className="bg-blue-circle"></span>
+                            <span className="bg-cyan-circle"></span>
+                            <span className="bg-white-circle"></span>
+                        </div>
+                        <p className="font-size-12px color-white-op">Art Design</p>
+                    </div>
+                    <div className="card flex flex-direc-clm jus-c-sb bg-white-to-light">
+                        <h2 className="font-size-12px pad-btm-10px color-p">Fokus utama</h2>
+                        <div className="flex jus-c-c pad-btm-10px gap-10px">
+                            <h3 className="font-size-18px color-white-to-black">Design sistem tuk gaya Tolol Modern</h3>
+                            <Layers className="color-black-op" />
+                        </div>
+                        <div className="flex-mx-500px-dir-clm jus-c-sb align-itm-stretch gap-24px">
+                            {fokusBacotList.map((item) => (
+                                <div key={item.id} className="card-small-10-20px bg-dark-op-to-black">
+                                    <h4 className="color-white">{item.name}</h4>
                                 </div>
                             ))}
                         </div>
-                        <div className="glow tolol-noname"></div>
                     </div>
-
-                    <div className="pos-rel card-hover-dig-to-left bg-blur-card">
-                        <div className="flex jus-c-sb align-itm-c gap-10px pad-btm-10px">
-                            <div className="icn-circle-svg flex gap-10px">
-                                <span className="bg-blue-circle"></span>
-                                <span className="bg-cyan-circle"></span>
-                                <span className="bg-white-circle"></span>
-                            </div>
-                            <p className="font-size-12px">Art Design</p>
+                    <div className="grid grid-temp-clm-r2 jus-c-c align-itm-inherit gap-10px pad-top-10px">
+                        <div className="card bg-white-to-light">
+                            <h2 className="font-size-14px color-p pad-btm-10px">WorkFlow</h2>
+                            {lolList.map((item) => (
+                                <div key={item.id} className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
+                                    <h3 className="font-size-16px color-white-to-black pad-btm-10px flex align-itm-c gap-10px">{item.icon} {item.name}</h3>
+                                    <p className="font-size-14px pad-btm-10px">{item.desc}</p>
+                                </div>
+                            ))}
                         </div>
-                        <div className="card flex flex-direc-clm jus-c-sb bg-blur-card-1">
-                            <h2 className="font-size-12px pad-btm-10px color-p">Fokus utama</h2>
-                            <div className="flex jus-c-c pad-btm-10px gap-10px">
-                                <h3 className="font-size-18px">Design sistem tuk gaya Tolol Modern</h3>
-                                <Layers />
-                            </div>
-                            <div className="flex-mx-500px-dir-clm jus-c-sb align-itm-stretch gap-24px">
-                                {fokusBacotList.map((item) => (
-                                    <div key={item.id} className="card-small-10-20px bg-dark-op">
-                                        <h4>{item.name}</h4>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="grid grid-temp-clm-r2 jus-c-c align-itm-inherit gap-10px pad-top-10px">
-                            <div className="card bg-blur-card-1">
-                                <h2 className="font-size-14px color-p pad-btm-10px">WorkFlow</h2>
-                                {lolList.map((item) => (
-                                    <div key={item.id} className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
-                                        <h3 className="font-size-16px pad-btm-10px flex align-itm-c gap-10px">{item.icon} {item.name}</h3>
-                                        <p className="font-size-14px pad-btm-10px">{item.desc}</p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="card bg-blur-card-1">
-                                <h2 className="font-size-14px color-p pad-btm-10px">FlowWork</h2>
-                                <div className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
-                                    <span className="font-size-16px pad-btm-10px"><Dna /></span>
-                                    <p className="font-size-14px pad-btm-10px">Penempatan posisi yang Ideal dalam repetisi dibalik kata tiap kalimat yang menjadikan paragraf deskripsi ini berisi namun berulang.</p>                                        </div>
-                            </div>
+                        <div className="card bg-white-to-light">
+                            <h2 className="font-size-14px color-p pad-btm-10px">FlowWork</h2>
+                            <div className="icn-svg-18wh flex flex-direc-clm jus-c-sb">
+                                <span className="font-size-16px flex align-itm-c color-black-op pad-btm-10px gap-10px"><Dna />Position</span>
+                                <p className="font-size-14px pad-btm-10px">Penempatan posisi yang Ideal dalam repetisi dibalik kata tiap kalimat yang menjadikan paragraf deskripsi ini berisi namun berulang.</p>                                        </div>
                         </div>
                     </div>
                 </div>
@@ -240,25 +286,25 @@ export default function HomePage() {
             <section aria-labelledby="road-bacot" className="sec-visible-auto pos-rel pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="horiz-effect-left"></div>
                 <div className="flex pad-top-10px pad-btm-20px">
-                    <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
+                    <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
                         <h2 id="road-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><Compass />Road</h2>
                     </div>
                 </div>
                 <div className="flex-mx-1024px-dir-clm jus-c-c align-itm-inherit gap-24px">
-                    <div className="card bg-blur-card">
+                    <div className="card width-100ps bg-blur-card">
                         <h3 className="font-size-14px color-p pad-btm-20px">Portfolio</h3>
                         <h4 className="font-size-24px pad-btm-30px">Portfolio yang didesain agar anda bosan membaca setiap kalimatnya.</h4>
                         <p>Memvisualisasikan penempatan posisi yang adaptif serta fleksibel. Dengan mengimplementasikan cara ini,akan membuat anda menjadi bosan dengan harapan anda pada kami.</p>
                     </div>
                     <div className="flex-mx-764px-dir-clm gap-20px">
                         {roadLol.map((item) => (
-                            <div key={item.id} className="card bg-blur-card">
+                            <div key={item.id} className="card grid align-itm-inherit bg-dark-to-light">
                                 <div className="flex jus-c-sb align-itm-c pad-btm-10px gap-10px">
-                                    <h3 className="font-size-14px color-p">{item.years}</h3>
-                                    <span className="font-size-14px color-p">{item.month}</span>
+                                    <h3 className="font-size-14px color-white-op">{item.years}</h3>
+                                    <span className="font-size-14px color-white-op">{item.month}</span>
                                 </div>
                                 <h4 className="font-size-16px pad-btm-20px">{item.title}</h4>
-                                <p className="font-size-12px">{item.desc}</p>
+                                <p className="font-size-14px color-white-op">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -269,7 +315,7 @@ export default function HomePage() {
                 <div className="glow-w400-h100px tolol-blue-old-btm-r-10-10ps"></div>
                 <div className="horiz-effect-right"></div>
                 <div className="flex pad-top-10px pad-btm-20px">
-                    <div className="pad-4-18px br-op br-radius-12px bg-blur-card">
+                    <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
                         <h2 id="skill-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><LayersPlus />Skills</h2>
                     </div>
                 </div>
@@ -288,12 +334,12 @@ export default function HomePage() {
                     </div>
                     <div className="grid grid-temp-clm-r4 jus-c-c gap-20px">
                         {skillsBacot.map((item) => (
-                            <div key={item.id} className="card-hover bg-blur-card">
+                            <div key={item.id} className={`card-hover ${classBgCardId(item.id)}`}>
                                 <div className="flex jus-c-sb gap-20px pad-btm-20px">
                                     <h2 className="font-size-16px">{item.skill}</h2>
                                     <strong className="flex jus-c-c align-itm-c gap-10px font-size-14px"><Star className="width-18px height-18px" />{item.skr}</strong>
                                 </div>
-                                <h3 className="font-size-12px color-p">{item.desc}</h3>
+                                <h3 className={`font-size-12px ${classColor(item.id)}`}>{item.desc}</h3>
                             </div>
                         ))}
                     </div>
