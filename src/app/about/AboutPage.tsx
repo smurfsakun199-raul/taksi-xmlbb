@@ -9,7 +9,7 @@ export default function About() {
 
     return (
         <main className="max-w-1210px margin-auto">
-            <section aria-labelledby="About-bacot" className="reveal pad-bl-20px pad-top-48px pad-0-14px">
+            <section aria-labelledby="About-bacot" className="reveal sec-visible pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="glow tolol-blue-old"></div>
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
                     <h1 id="project-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">About</h1>

@@ -165,7 +165,7 @@ export default function Header() {
                 </button>
             </div>
             <div
-                className={`pos-abs width-100ps pad-10px ${contact == true ? 'transY-op1 z-index-1 pnt-e-visible' : 'transY-op0-40px z-index--1 pnt-e-none'}`}>
+                className={`pos-abs width-100ps pad-10px ${contact == true ? 'transition-op08-trans03s-ease-in-out transY-op1 z-index-1 pnt-e-visible' : 'transition-op02-trans05s-ease-in-out transY-op0-80px z-index--1 pnt-e-none'}`}>
                 <div className="flex flex-direc-clm jus-c-c align-itm-c margin-auto">
                     <div>
                         {listContact.map((itm) => (

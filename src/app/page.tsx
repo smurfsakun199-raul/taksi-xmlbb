@@ -3,7 +3,7 @@ import HomePage from "@/app/HomePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: 'HomePage Portfolio',
+    title: 'Portfolio Biasa Tololnya😂 - Work Only Solo🙂',
     description: 'Gimana biar website terlihat sangat cepat dan estetik? Lihat contoh desain website kami & temukan referensi serta inspirasi kamu disini,yuk gas!',
     keywords: ["portfolio estetik", "Website lucu dan ngakak", "bagaimana portfolio yang estetik?", "website dengan skor 100& pada semua aspek", "contoh website terkeren"]
 }

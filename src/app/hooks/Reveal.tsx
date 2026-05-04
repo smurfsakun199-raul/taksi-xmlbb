@@ -11,7 +11,7 @@ export default function Reveal() {
                     deff.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.05 });
+        }, { threshold: 0.08 });
 
         const showRev = document.querySelectorAll('.reveal');
         showRev.forEach((el) => deff.observe(el));

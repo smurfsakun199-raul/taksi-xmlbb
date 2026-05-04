@@ -142,7 +142,7 @@ export default function Stats() {
 
     return (
         <main className="max-w-1210px margin-auto">
-            <section aria-labelledby="stats-bacot" className="reveal sec-visible-auto pad-bl-20px pad-top-48px pad-0-14px">
+            <section aria-labelledby="stats-bacot" className="reveal sec-visible pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
                     <h1 onClick={() => scrollToDiv('lol')} id="stats-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">Stats</h1>
                     <p className="font-size-14px pad-btm-10px">Apa kelebihan dan kekurangan website ini?</p>
@@ -192,7 +192,7 @@ export default function Stats() {
                         ))}
                     </div>
                 </div>
-                <div className="">
+                <div className="reveal">
                     <div ref={(el) => { divRefs.current['lol'] = el; }} className="flex pos-rel flex-direc-clm jus-c-c align-itm-inherit gap-24px">
                         <div className="glow-w300-h100px tolol-blue-old-top-l-10-10ps"></div>
                         <div className="glow-w300-h100px tolol-blue-old-btm-r-10-10ps"></div>
@@ -201,7 +201,7 @@ export default function Stats() {
                             return (
                                 <div
                                     key={itm.id}
-                                    className={`reveal flex flex-direc-clm pad-10px ${classAlignList(itm.id)}`}>
+                                    className={`flex flex-direc-clm pad-10px ${classAlignList(itm.id)}`}>
                                     <div className={`${classHorizEffectList(itm.id)}`}></div>
                                     <h3 className="flex jus-c-c align-itm-c gap-10px pad-top-20px pad-btm-20px"><IconComponent /> {itm.name}</h3>
                                     <div className={`flex-mx-764px-dir-clm width-100ps ${itm.id === 3 ? 'jus-c-c' : 'jus-c-sb'} pad-btm-40px ${classAlignList(itm.id)} ${classFlexDirecList(itm.id)} gap-48px`}>

@@ -277,12 +277,13 @@ body.light {
 
   .sec-visible {
     content-visibility: visible;
-    contain-intrinsic-size: 0 500px;
+    contain-intrinsic-size: auto 500px;
   }
 
   .sec-visible-auto {
     content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
+    contain-intrinsic-size: auto 500px;
+    contain-intrinsic-block-size: auto 500px;
   }
 
   /* --- Custom Style --- */
@@ -973,8 +974,8 @@ body.light {
     transform: translateY(-4px);
   }
 
-  .transY-op0-40px {
-    transform: translateY(-40px);
+  .transY-op0-80px {
+    transform: translateY(-80px);
     opacity: 0;
     transition: 0.3s ease-in-out;
   }
@@ -993,6 +994,18 @@ body.light {
   .rotate-180deg {
     transform: rotate(180deg);
     transition: 0.2s;
+  }
+
+  /* -- Transition -- */
+
+  .transition-op02-trans05s-ease-in-out {
+    transition: opacity 0.2s ease-in-out,
+      transform 0.5s ease-in-out;
+  }
+
+  .transition-op08-trans03s-ease-in-out {
+    transition: opacity 0.8s ease-in-out,
+      transform 0.3s ease-in-out;
   }
 
   /* --- Icon --- */
@@ -1044,18 +1057,18 @@ body.light {
   }
 
   .icn-item-link-op {
-    transform: translateY(0);
+    transform: translateY(10px);
     opacity: 1;
     pointer-events: visible;
     backdrop-filter: blur(8px);
     z-index: 10;
-    transition: 0.3s ease-in-out;
+    transition: opacity 0.8s ease-in-out, transform 0.3s ease-in-out;
   }
 
   .icn-item_764-svg {
     opacity: 0;
-    transform: translateY(-40px);
-    transition: 0.3s ease-in-out;
+    transform: translateY(-80px);
+    transition: opacity 0.2s ease-in-out, transform 0.5s ease-in-out;
     pointer-events: none;
     z-index: -1;
   }
@@ -1414,15 +1427,15 @@ body.light {
   .grid-temp-clm-r4-to-r2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .grid-temp-clm-r5 {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 500px) {
   .flex-mx-500px-dir-clm {
     flex-direction: column;
-  }
-
-  .grid-temp-clm-r5 {
-    grid-template-columns: 1fr;
   }
 }
 
