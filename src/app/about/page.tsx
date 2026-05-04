@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import About from "../components/About";
+import About from "@/app/about/AboutPage";
 
 export const metadata: Metadata = {
     title: 'About Portfolio',

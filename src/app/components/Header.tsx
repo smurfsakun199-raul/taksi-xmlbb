@@ -107,11 +107,13 @@ export default function Header() {
                     </div>
                     <div className="flex jus-c-c align-itm-c gap-10px">
                         <button
+                            type="button"
+                            aria-expanded={contact}
                             onClick={() => {
                                 setContact(prev => !prev);
                                 setDownLink(false);
                             }}
-                            className="icn-svg-theme cursor-pnt bg-blur-card flex align-itm-fe bg-transparent br-radius-12px gap-4px"><UserRound />Contact
+                            className="icn-svg-theme hover-after-effect-left-to-right cursor-pnt bg-blur-card flex align-itm-fe bg-transparent br-radius-12px gap-4px"><UserRound />Contact
                         </button>
                         <button
                             type="button"
@@ -125,8 +127,9 @@ export default function Header() {
                             )}
                         </button>
                         <button
+                            type="button"
                             aria-label="showLink"
-                            aria-pressed={downLink}
+                            aria-expanded={downLink}
                             onClick={() => {
                                 setDownLink(prev => !prev);
                                 setContact(false)
@@ -138,7 +141,7 @@ export default function Header() {
             </nav>
             <div className="horiz-effect-center"></div>
             <div
-                className={`pos-abs z-index-1000 width-100ps ${downLink == true ? 'icn-item-link-op' : 'icn-item_764-svg'} grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
+                className={`pos-abs width-100ps ${downLink == true ? 'icn-item-link-op' : 'icn-item_764-svg'} grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
                 {listItemLinksBacot.map((item) => {
                     const linkActive = pathName === item.link;
                     return (
@@ -148,8 +151,9 @@ export default function Header() {
                     );
                 })}
                 <button
+                    type="button"
                     aria-label="closeLink"
-                    aria-pressed={downLink}
+                    aria-expanded={downLink}
                     onClick={() => setDownLink(false)}
                     className="bg-op font-size-14px cursor-pnt flex jus-c-c align-itm-c gap-10px">
                     {downLink === true ?
@@ -161,7 +165,7 @@ export default function Header() {
                 </button>
             </div>
             <div
-                className={`pos-abs width-100ps pad-10px ${contact == true ? 'transY-op1 z-index-1 pnt-e-visible' : 'transY-op0-100px z-index--1 pnt-e-none'}`}>
+                className={`pos-abs width-100ps pad-10px ${contact == true ? 'transY-op1 z-index-1 pnt-e-visible' : 'transY-op0-40px z-index--1 pnt-e-none'}`}>
                 <div className="flex flex-direc-clm jus-c-c align-itm-c margin-auto">
                     <div>
                         {listContact.map((itm) => (
@@ -175,8 +179,9 @@ export default function Header() {
                             </Link>
                         ))}</div>
                     <button
+                        type="button"
                         aria-label="closeContact"
-                        aria-pressed={contact}
+                        aria-expanded={contact}
                         onClick={() => setContact(false)}
                         className="bg-op font-size-14px cursor-pnt flex jus-c-c align-itm-c gap-10px">
                         {contact === true ?
@@ -192,6 +197,7 @@ export default function Header() {
                 onClick={() => scrollToId('nav')}
                 className="pos-fix pad-10px br-radius-50ps bottom-4ps right-2ps z-index-1">
                 <button
+                    type="button"
                     className="bg-transparent cursor-pnt"
                     aria-label="UpToNavigation">
                     <ArrowUp />

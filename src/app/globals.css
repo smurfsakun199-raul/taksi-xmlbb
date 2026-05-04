@@ -973,8 +973,8 @@ body.light {
     transform: translateY(-4px);
   }
 
-  .transY-op0-100px {
-    transform: translateY(-100px);
+  .transY-op0-40px {
+    transform: translateY(-40px);
     opacity: 0;
     transition: 0.3s ease-in-out;
   }
@@ -1054,7 +1054,7 @@ body.light {
 
   .icn-item_764-svg {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-40px);
     transition: 0.3s ease-in-out;
     pointer-events: none;
     z-index: -1;
@@ -1161,6 +1161,8 @@ body.light {
 
   /* --- Card & Effect --- */
 
+  /* -- Card -- */
+
   .card-small-10-20px {
     padding: 10px 20px;
     border: 1px solid var(--br-op);
@@ -1193,6 +1195,8 @@ body.light {
     border: 1px solid var(--br-op);
     border-radius: 12px;
   }
+
+  /* -- Effects -- */
 
   .horiz-effect-left {
     width: 100%;
@@ -1337,11 +1341,34 @@ body.light {
     width: 100%;
   }
 
+  .hover-after-effect-left-to-right {
+    position: relative;
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hover-after-effect-left-to-right::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: -2px;
+    height: 2px;
+    left: 10%;
+    background: linear-gradient(to right, var(--bg-blue-old-after), transparent);
+    transition: width 0.3s ease-in-out;
+    will-change: width;
+  }
+
+  .hover-after-effect-left-to-right:hover:after {
+    width: 100%;
+  }
+
   /* --- Reveal --- */
 
   .reveal {
     opacity: 0;
-    transform: translateY(300px);
+    transform: translateY(50px);
     transition: transform 0.5s ease-in-out, opacity 1.5s ease-in-out;
   }
 

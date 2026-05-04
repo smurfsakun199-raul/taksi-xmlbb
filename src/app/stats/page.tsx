@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import StatsProjek from '@/app/components/StatsProjek'
+import StatsProjek from '@/app/stats/StatsProjek';
 
 export const metadata: Metadata = {
     title: 'Stats Portfolio',

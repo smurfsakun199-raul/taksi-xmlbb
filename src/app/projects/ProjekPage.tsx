@@ -70,7 +70,7 @@ export default function Projects() {
                 </div>
                 <div className="flex flex-direc-clm jus-c-c align-itm-inherit pad-top-48px pad-btm-20px gap-48px">
                     {listProjek.map((item) => (
-                        <div key={item.id} className="pad-20-20px box-sdw-1-2-6px">
+                        <div key={item.id} className="reveal pad-20-20px box-sdw-1-2-6px">
                             <div className="flex jus-c-sb align-itm-c pad-btm-20px">
                                 <h2 className="font-size-16px color-p">{item.title}</h2>
                                 <span>{item.pers}</span>
