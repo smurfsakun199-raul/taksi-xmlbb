@@ -51,7 +51,7 @@ export default function Projects() {
 
     return (
         <main className="max-w-1210px margin-auto">
-            <section aria-labelledby="project-bacot" className="reveal sec-visible pad-bl-20px pad-top-48px pad-0-14px">
+            <section aria-labelledby="project-bacot" className="animSlideUp sec-visible pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
                     <h1 id="project-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">Projects</h1>
                     <p className="font-size-14px txt-align-c pad-btm-10px">Bagaimana cara tuk membuat website Tolol?</p>
@@ -70,7 +70,7 @@ export default function Projects() {
                 </div>
                 <div className="flex flex-direc-clm jus-c-c align-itm-inherit pad-top-48px pad-btm-20px gap-48px">
                     {listProjek.map((item) => (
-                        <div key={item.id} className="reveal pad-20-20px box-sdw-1-2-6px">
+                        <div key={item.id} className="pad-20-20px box-sdw-1-2-6px">
                             <div className="flex jus-c-sb align-itm-c pad-btm-20px">
                                 <h2 className="font-size-16px color-p">{item.title}</h2>
                                 <span>{item.pers}</span>
