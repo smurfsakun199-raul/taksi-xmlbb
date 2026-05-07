@@ -74,7 +74,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  transition: background 0.1s linear;
+  transition: background 0.3s ease-in-out;
 }
 
 body.light {
@@ -132,6 +132,9 @@ body.light {
     border: none;
     padding-block: 6px;
     padding-inline: 8px;
+    /*
+    background: var(--clr);
+    color: var(--bg);*/
   }
 
   img {
@@ -1027,6 +1030,7 @@ body.light {
     bottom: -2px;
     background: radial-gradient(circle at center, var(--bg-blue-old), var(--bg) 120%);
     transform: translateX(50%);
+    will-change: transform;
     transition: 0.3s ease-in-out;
   }
 
@@ -1056,6 +1060,7 @@ body.light {
     transform: translateY(10px);
     opacity: 1;
     pointer-events: visible;
+    backdrop-filter: blur(8px);
     z-index: 10;
     transition: opacity 0.8s ease-in-out, transform 0.3s ease-in-out;
   }
@@ -1085,6 +1090,7 @@ body.light {
     bottom: -2px;
     background: radial-gradient(circle at center, var(--bg-blue-old), transparent 120%);
     transform: translateX(50%);
+    will-change: transform;
     transition: 0.3s ease-in-out;
   }
 
@@ -1364,6 +1370,7 @@ body.light {
     left: 10%;
     background: linear-gradient(to right, var(--bg-blue-old-after), transparent);
     transition: width 0.3s ease-in-out;
+    will-change: width;
   }
 
   .hover-after-effect-left-to-right:hover:after {
@@ -1455,25 +1462,5 @@ body.light {
       transform: translateY(-6px);
       box-shadow: 0px 6px 6px var(--bg-blue);
     }
-  }
-}
-
-.animSlideUp {
-  animation: animSlideUp 0.6s ease-in-out forwards;
-}
-
-@keyframes animSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-
-  60% {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
