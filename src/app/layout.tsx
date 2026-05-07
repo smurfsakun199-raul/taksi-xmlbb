@@ -32,13 +32,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Web Kebacotan Author Tolol',
     description: 'Gimana biar website terlihat estetik? Lihat contoh desain website kami & temukan referensi serta inspirasi kamu disini,yuk gas!',
-    url: 'https://taksi-xmlbb.vercel.app',
+    url: 'https://pemalas.vercel.app',
     siteName: 'Lawak bcot',
     locale: 'id_ID',
     type: 'website'
-  },
-  icons: {
-    icon: '/favicon.svg',
   }
 };
 
