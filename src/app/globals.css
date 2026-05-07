@@ -74,7 +74,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  transition: background 0.3s ease-in-out;
 }
 
 body.light {
@@ -1060,7 +1059,6 @@ body.light {
     transform: translateY(10px);
     opacity: 1;
     pointer-events: visible;
-    backdrop-filter: blur(8px);
     z-index: 10;
     transition: opacity 0.8s ease-in-out, transform 0.3s ease-in-out;
   }
@@ -1075,34 +1073,13 @@ body.light {
 
   .icn-item_764-svg a,
   .icn-item-link-op a {
-    position: relative;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    will-change: transform, box-shadow;
-  }
-
-  .icn-item_764-svg a::after,
-  .icn-item-link-op a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    right: 50%;
-    height: 2px;
-    bottom: -2px;
-    background: radial-gradient(circle at center, var(--bg-blue-old), transparent 120%);
-    transform: translateX(50%);
-    will-change: transform;
-    transition: 0.3s ease-in-out;
   }
 
   .icn-item_764-svg a:hover,
   .icn-item-link-op a:hover {
     box-shadow: 0px 0px 6px var(--bg-blue);
     transform: translateY(-1px);
-  }
-
-  .icn-item_764-svg a:hover::after,
-  .icn-item-link-op a:hover::after {
-    width: 100%;
   }
 
   .icn-item_764-svg a,
@@ -1462,5 +1439,25 @@ body.light {
       transform: translateY(-6px);
       box-shadow: 0px 6px 6px var(--bg-blue);
     }
+  }
+}
+
+.animSlideUp {
+  animation: animSlideUp 0.6s ease-in-out forwards;
+}
+
+@keyframes animSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
