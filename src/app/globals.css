@@ -53,7 +53,6 @@
 }
 
 html {
-  width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -131,18 +130,6 @@ body.light {
     border: none;
     padding-block: 6px;
     padding-inline: 8px;
-    /*
-    background: var(--clr);
-    color: var(--bg);*/
-  }
-
-  img {
-    object-fit: contain;
-    border: 1px solid var(--br-op);
-    border-radius: 12px;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
   }
 
   /* --- Effect-Glow --- */
@@ -308,7 +295,7 @@ body.light {
   }
 
   .color-blue {
-    box-shadow: 0px 0.5px 6px var(--bg-blue);
+    box-shadow: 0px 0px 6px var(--bg-blue);
   }
 
   /* -- Font -- */
@@ -937,8 +924,6 @@ body.light {
     background: var(--clr);
     color: var(--bg);
     transition: 0.3s ease-in-out;
-    transform: translateZ(0);
-    will-change: transform;
   }
 
   .box-sdw-blue:hover {
@@ -1056,7 +1041,6 @@ body.light {
   }
 
   .icn-item-link-op {
-    transform: translateY(10px);
     opacity: 1;
     pointer-events: visible;
     z-index: 10;
@@ -1073,13 +1057,13 @@ body.light {
 
   .icn-item_764-svg a,
   .icn-item-link-op a {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
 
   .icn-item_764-svg a:hover,
   .icn-item-link-op a:hover {
     box-shadow: 0px 0px 6px var(--bg-blue);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
 
   .icn-item_764-svg a,
