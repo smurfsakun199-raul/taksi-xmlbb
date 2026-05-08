@@ -168,7 +168,7 @@ export default function HomePage() {
                 aria-labelledby="bacot-title"
                 className="animSlideUp sec-visible pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
-                    <h1 id="project-bacot" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">PortFolio</h1>
+                    <h1 id="bacot-title" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">PortFolio</h1>
                     <p className="font-size-14px txt-align-c pad-btm-10px">Merepresentasikan website Portfolio yang Tolol juga sangat biasa aja</p>
                     <div className="horiz-effect-center-small"></div>
                 </div>
@@ -194,7 +194,7 @@ export default function HomePage() {
                     <h2 className="font-size-24px txt-align-c pad-btm-40px">Bahasa pemrograman apa yang digunakan oleh Author yang ga jelas ini?</h2>
                     <div className="flex pad-top-10px pad-btm-20px">
                         <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
-                            <h3 className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</h3>
+                            <span className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</span>
                         </div>
                     </div>
                     <div className="pos-rel grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">
@@ -206,7 +206,7 @@ export default function HomePage() {
                                 </div>
                                 <div className="icn-svg-18wh flex jus-c-l align-itm-c pad-btm-10px gap-10px">
                                     {item.icn}
-                                    <h4 className="font-size-18px">{item.code}</h4>
+                                    <h3 className="font-size-18px">{item.code}</h3>
                                 </div>
                                 <div>
                                     <p className={`font-size-14px ${classColor(item.id)}`}>{item.desk}</p>
@@ -222,7 +222,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex pad-top-10px pad-btm-20px">
                         <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
-                            <h3 className="font-size-16px flex align-itm-c gap-10px"><Wrench /> Tools</h3>
+                            <span className="font-size-16px flex align-itm-c gap-10px"><Wrench /> Tools</span>
                         </div>
                     </div>
                     <div className="grid grid-temp-clm-r2 jus-c-c align-itm-c gap-24px">
@@ -231,7 +231,7 @@ export default function HomePage() {
                                 <span className="font-size-18px">
                                     {itm.category}
                                 </span>
-                                <h4 className="flex align-itm-c pad-top-10px pad-btm-20px gap-10px">{<itm.icn />}{itm.tool}</h4>
+                                <h3 className="flex align-itm-c pad-top-10px pad-btm-20px gap-10px">{<itm.icn />}{itm.tool}</h3>
                                 <p className={`font-size-14px ${classColor(itm.id)}`}>{itm.desc}</p>
                             </div>
                         ))}
@@ -294,23 +294,23 @@ export default function HomePage() {
                 <div className="reveal pad-top-10px">
                     <div className="flex pad-btm-20px">
                         <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
-                            <h2 id="road-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><Compass />Road</h2>
+                            <span id="road-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><Compass />Road</span>
                         </div>
                     </div>
                     <div className="flex-mx-1024px-dir-clm jus-c-c align-itm-inherit gap-24px">
                         <div className="card width-100ps bg-blur-card">
-                            <h3 className="font-size-14px color-p pad-btm-20px">Portfolio</h3>
-                            <h4 className="font-size-24px pad-btm-30px">Portfolio yang didesain agar anda bosan membaca setiap kalimatnya.</h4>
+                            <h2 className="font-size-14px color-p pad-btm-20px">Portfolio</h2>
+                            <h3 className="font-size-24px pad-btm-30px">Portfolio yang didesain agar anda bosan membaca setiap kalimatnya.</h3>
                             <p>Memvisualisasikan penempatan posisi yang adaptif serta fleksibel. Dengan mengimplementasikan cara ini,akan membuat anda menjadi bosan dengan harapan anda pada kami.</p>
                         </div>
                         <div className="flex-mx-764px-dir-clm gap-20px">
                             {roadLol.map((item) => (
                                 <div key={item.id} className="card grid align-itm-inherit bg-dark-to-light">
                                     <div className="flex jus-c-sb align-itm-c pad-btm-10px gap-10px">
-                                        <h3 className="font-size-14px color-white-op">{item.years}</h3>
+                                        <h4 className="font-size-14px color-white-op">{item.years}</h4>
                                         <span className="font-size-14px color-white-op">{item.month}</span>
                                     </div>
-                                    <h4 className="font-size-16px pad-btm-20px">{item.title}</h4>
+                                    <h5 className="font-size-16px pad-btm-20px">{item.title}</h5>
                                     <p className="font-size-14px color-white-op">{item.desc}</p>
                                 </div>
                             ))}
@@ -325,7 +325,7 @@ export default function HomePage() {
                 <div className="reveal pad-top-10px">
                     <div className="flex pad-btm-20px">
                         <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
-                            <h2 id="skill-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><LayersPlus />Skills</h2>
+                            <span id="skill-bacot" className="font-size-16px flex jus-c-c align-itm-c gap-10px"><LayersPlus />Skills</span>
                         </div>
                     </div>
                     <div className="flex flex-direc-clm jus-c-c align-itm-c gap-24px">

@@ -1,12 +1,11 @@
 import Link from "next/link";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faGoogle, faOpenai, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { List } from "lucide-react";
+import { SiGithub, SiGoogle, SiGooglegemini, SiWhatsapp } from "react-icons/si";
+import { IconType } from "react-icons";
 
 interface List {
     id: number;
-    contact: any;
+    contact: IconType;
     link: string;
     label: string;
     class?: string;
@@ -16,14 +15,14 @@ interface List {
 const listContact: List[] = [
     {
         id: 1,
-        contact: faWhatsapp,
+        contact: SiWhatsapp,
         link: 'https://wa.me/62811004639',
         label: 'WhatsApp',
         class: 'icn-whatsapp'
     },
     {
         id: 2,
-        contact: faGithub,
+        contact: SiGithub,
         link: 'https://github.com/smurfsakun199-raul/taksi-xmlbb',
         label: 'GitHub',
         class: 'icn-github'
@@ -33,14 +32,14 @@ const listContact: List[] = [
 const listReport: List[] = [
     {
         id: 1,
-        contact: faOpenai,
+        contact: SiGooglegemini,
         link: 'https://chatgpt.com/',
         label: 'OpenAi ChatGPT',
-        class_2: 'icn-openai'
+        class: 'icn-gemini'
     },
     {
         id: 2,
-        contact: faGoogle,
+        contact: SiGoogle,
         link: 'https://google.com/',
         label: 'Google',
         class: 'icn-google'
@@ -57,22 +56,27 @@ export default function Footer() {
                 className="flex jus-c-c align-itm-c pad-top-30px gap-24px">
                 <div className="flex flex-direc-clm">
                     <span className="font-size-18px pad-btm-10px">Contact Me</span>
-                    <div>
+                    <div className="flex gap-10px">
                         {listContact.map((itm) => (
                             <Link
                                 aria-label={itm.label}
                                 href={itm.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`font-size-24px br-radius-50ps cursor-pnt ${itm.class}`}
+                                className={`font-size-24px br-radius-50ps cursor-pnt`}
                                 key={itm.id}>
-                                <FontAwesomeIcon icon={itm.contact} />
+                                {<itm.contact
+                                    aria-hidden="true"
+                                    className={`flex align-itm-c ${itm.class}`}
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />}
                             </Link>
                         ))}</div>
                 </div>
                 <div className="flex flex-direc-clm">
                     <span className="font-size-18px pad-btm-10px">Report Me</span>
-                    <div>
+                    <div className="flex gap-10px">
                         {listReport.map((itm) => (
                             <Link
                                 aria-label={itm.label}
@@ -81,9 +85,12 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className={`font-size-24px br-radius-50ps cursor-pnt ${itm.class}`}
                                 key={itm.id}>
-                                <FontAwesomeIcon
-                                    icon={itm.contact}
-                                    className={`br-radius-50ps ${itm.class_2}`} />
+                                {<itm.contact
+                                    aria-hidden="true"
+                                    className={`flex align-itm-c ${itm.class}`}
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />}
                             </Link>
                         ))}
                     </div>

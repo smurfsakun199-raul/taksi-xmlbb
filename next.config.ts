@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    optimizeCss: true,
+    useLightningcss: true,
+    optimisticClientCache: true,
+    optimisticRouting: true,
+    cacheComponents: true,
+  },
   reactCompiler: true,
 };
 

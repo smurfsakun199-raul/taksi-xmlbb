@@ -1,9 +1,10 @@
 'use client';
+
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+
+import { SiGithub, SiWhatsapp } from "react-icons/si";
 
 import {
     Sun,
@@ -18,6 +19,8 @@ import {
     ArrowUp,
     ChevronUp,
 } from "lucide-react";
+
+const Author = 'Pemalas';
 
 const listItemLinksBacot = [
     {
@@ -47,8 +50,8 @@ const listItemLinksBacot = [
 ];
 
 const listContact = [
-    { id: 1, contact: faWhatsapp, link: 'https://wa.me/62811004639', label: 'WhatsApp', class: 'icn-whatsapp' },
-    { id: 2, contact: faGithub, link: 'https://github.com/smurfsakun199-raul/taksi-xmlbb', label: 'GitHub', class: 'icn-github' }
+    { id: 1, contact: SiWhatsapp, link: 'https://wa.me/62811004639', label: 'WhatsApp', class: 'icn-whatsapp' },
+    { id: 2, contact: SiGithub, link: 'https://github.com/smurfsakun199-raul/taksi-xmlbb', label: 'GitHub', class: 'icn-github' }
 ];
 
 export default function Header() {
@@ -87,12 +90,14 @@ export default function Header() {
                 className="pos-sticky width-100ps top pad-bl-10px pad-0-14px">
                 <div className="flex jus-c-sb align-itm-c max-w-1180px margin-auto">
                     <div className="flex jus-c-c align-itm-c gap-10px">
-                        <div className="bacotLogo">
-                            <CodeXml />
+                        <div className={`bg-black-in-light ${isLight === 'dark' ? 'box-sdw-0-2-6px' : 'box-sdw-0-0-4px-black-in-light'} br-radius-4px pad-2px`}>
+                            <CodeXml
+                                className="flex align-itm-c jus-c-c"
+                            />
                         </div>
-                        <div className="authorTolol">
-                            <span>Pemalas</span>
-                            <p className="font-size-12px">Animasi yang biasa</p>
+                        <div className="flex flex-direc-clm">
+                            <span>{Author}</span>
+                            <span className="font-size-12px color-p">Animasi yang biasa</span>
                         </div>
                     </div>
                     <div className="icn-item-svg flex jus-c-c align-itm-c gap-20px pad-10-24px outline-op bg-blur-card br-radius-12px">
@@ -108,12 +113,14 @@ export default function Header() {
                     <div className="flex jus-c-c align-itm-c gap-10px">
                         <button
                             type="button"
+                            aria-label="Contact"
                             aria-expanded={contact}
                             onClick={() => {
                                 setContact(prev => !prev);
                                 setDownLink(false);
                             }}
-                            className="icn-svg-theme hover-after-effect-left-to-right cursor-pnt bg-blur-card flex align-itm-fe bg-transparent br-radius-12px gap-4px"><UserRound />Contact
+                            className="icn-svg-theme pad-4-0px hover-after-effect-left-to-right cursor-pnt bg-blur-card flex align-itm-fe bg-transparent br-radius-12px gap-4px">
+                            <UserRound />Contact
                         </button>
                         <button
                             type="button"
@@ -167,7 +174,7 @@ export default function Header() {
             <div
                 className={`pos-abs width-100ps pad-10px ${contact == true ? 'transition-op08-trans03s-ease-in-out transY-op1 z-index-1 pnt-e-visible' : 'transition-op02-trans05s-ease-in-out transY-op0-80px z-index--1 pnt-e-none'}`}>
                 <div className="flex flex-direc-clm jus-c-c align-itm-c margin-auto">
-                    <div>
+                    <div className="flex gap-10px">
                         {listContact.map((itm) => (
                             <Link
                                 aria-label={itm.label}
@@ -175,7 +182,12 @@ export default function Header() {
                                 target="_blank"
                                 className={`font-size-24px br-radius-50ps cursor-pnt ${itm.class}`}
                                 key={itm.id}>
-                                <FontAwesomeIcon icon={itm.contact} />
+                                {<itm.contact
+                                    aria-hidden="true"
+                                    className={`flex align-itm-c ${itm.class}`}
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />}
                             </Link>
                         ))}</div>
                     <button
