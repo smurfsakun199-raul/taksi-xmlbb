@@ -156,7 +156,7 @@ export default function Stats() {
                     <div className="glow-w400-h100px tolol-blue-old-btm-r-10-10ps"></div>
                 </div>
                 <div className="pad-btm-20px">
-                    <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Statistik <span className="glow-text">Website</span> paling Sampah juga sangat biasa dan Tidak <span className="glow-text">Menarik</span></h2>
+                    <h2 className="font-size-3-5rem txt-align-c pad-btm-20px">Statistik <span className="glow-text">Website</span> paling Sampah juga sangat biasa dan Tidak <span className="glow-text">Menarik</span></h2>
                     <p className="txt-align-c">Data analisis ini mungkin sangat tepat sehingga mungkin membuat anda tidak sanggup melihat realita yang sudah ada sehingga harapan anda pada kami menurun.</p>
                 </div>
             </section>

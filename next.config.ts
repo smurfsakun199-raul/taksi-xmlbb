@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
     useLightningcss: true,
     optimisticClientCache: true,
     optimisticRouting: true,
-    cacheComponents: true,
   },
+  cacheComponents: true,
   reactCompiler: true,
 };
 

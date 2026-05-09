@@ -144,8 +144,20 @@ const skillsBacot = [
 ];
 
 const listTools: { id: number, icn: LucideIcon, category: string, tool: string, desc: string }[] = [
-    { id: 1, icn: Code, category: 'Normal Flex', tool: 'Visual Studio Code', desc: 'Efisiensi kode dalam pengembangan projek. Disarankan menggunakan tool Visual Studio jika fokus anda berupa efisiensi kode.' },
-    { id: 2, icn: ChartNoAxesGantt, category: 'HardCore', tool: 'Nano', desc: 'Penggunaan tuk memahami kedalaman kode dalam pengembangan,meski cara ini tidak efisien dibanding tool Visual Studio.' },
+    {
+        id: 1,
+        icn: Code,
+        category: 'Normal Flex',
+        tool: 'Visual Studio Code',
+        desc: 'Efisiensi kode dalam pengembangan projek Lu. Disarankan menggunakan tool Visual Studio kalo fokus Lu Efisiensi kode.'
+    },
+    {
+        id: 2,
+        icn: ChartNoAxesGantt,
+        category: 'HardCore',
+        tool: 'Nano',
+        desc: 'Penggunaan buat memahami kedalaman kode Lu dalam pengembangan,meski cara ini kagak seEfisien dan seRapih dibanding tool tadi "Visual Studio".'
+    },
 ];
 
 const classBgCardId = (id: number) => {
@@ -181,7 +193,7 @@ export default function HomePage() {
                         </div>
                         <div className="pad-btm-40px">
                             <div className="glow-w400-h100px tolol-blue-top-l-10-10ps"></div>
-                            <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Design Portfolio dengan memadukan <span className="glow-text">Ketololan</span> yang <span className="glow-text">Unik, Rapi</span> dan biasa</h2>
+                            <h2 className="font-size-3-5rem txt-align-c pad-btm-20px">Design Portfolio dengan memadukan <span className="glow-text">Ketololan</span> yang <span className="glow-text">Unik, Rapi</span> dan biasa</h2>
                             <p className="txt-align-c">Deskripsi ini mungkin membuat anda akan menyesal jika sampai membacanya sampai selesai,dikarenakan kata yang saya gunakan merepetisi sebuah kata menjadi berulang ulang,dan akhirnya yang anda dapat hanyalah tautologi dan tak menguntungkan anda.</p>
                         </div>
                     </div>
@@ -194,7 +206,7 @@ export default function HomePage() {
                     <h2 className="font-size-24px txt-align-c pad-btm-40px">Bahasa pemrograman apa yang digunakan oleh Author yang ga jelas ini?</h2>
                     <div className="flex pad-top-10px pad-btm-20px">
                         <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
-                            <span className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</span>
+                            <span id="info-bacot" className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</span>
                         </div>
                     </div>
                     <div className="pos-rel grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">

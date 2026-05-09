@@ -65,7 +65,7 @@ export default function Projects() {
                     <div className="glow-w400-h100px tolol-blue-top-l-10-10ps"></div>
                 </div>
                 <div className="pad-btm-40px pos-rel">
-                    <h2 id="bacot-title" className="font-size-3-5rem txt-align-c pad-btm-20px">Project website <span className="glow-text">Tolol</span> juga <span className="glow-text">Lambat, Berat</span> nan <span className="glow-text">Buruk</span></h2>
+                    <h2 className="font-size-3-5rem txt-align-c pad-btm-20px">Project website <span className="glow-text">Tolol</span> juga <span className="glow-text">Lambat, Berat</span> nan <span className="glow-text">Buruk</span></h2>
                     <p className="txt-align-c">Buat projek anda lebih baik dengan tidak mengharapkan apapun harapan anda pada kami,karena akan membuat anda kecewa.</p>
                 </div>
                 <div className="flex flex-direc-clm jus-c-c align-itm-inherit pad-top-48px pad-btm-20px gap-48px">

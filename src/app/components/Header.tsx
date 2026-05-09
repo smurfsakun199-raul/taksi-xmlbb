@@ -77,10 +77,14 @@ export default function Header() {
 
     const [contact, setContact] = useState(false)
 
-    const divRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+    const divRefs = useRef<{
+        [key: string]: HTMLElement | null
+    }>({});
 
     const scrollToId = (id: string) => {
-        divRefs.current[id]?.scrollIntoView({ behavior: "smooth" });
+        divRefs.current[id]?.scrollIntoView(
+            { behavior: "smooth" }
+        );
     };
 
     return (
@@ -100,16 +104,18 @@ export default function Header() {
                             <span className="font-size-12px color-p">Animasi yang biasa</span>
                         </div>
                     </div>
-                    <div className="icn-item-svg flex jus-c-c align-itm-c gap-20px pad-10-24px outline-op bg-blur-card br-radius-12px">
+                    <ul className="icn-item-svg flex jus-c-c align-itm-c gap-20px pad-10-24px outline-op bg-blur-card br-radius-12px">
                         {listItemLinksBacot.map((item) => {
                             const linkActive = pathName === item.link;
                             return (
-                                <Link key={item.id} href={item.link}
-                                    className={linkActive ? 'color-blue' : ''}>{item.icon}{item.name}
-                                </Link>
+                                <li key={item.id}>
+                                    <Link href={item.link}
+                                        className={linkActive ? 'color-blue' : ''}>{item.icon}{item.name}
+                                    </Link>
+                                </li>
                             );
                         })}
-                    </div>
+                    </ul>
                     <div className="flex jus-c-c align-itm-c gap-10px">
                         <button
                             type="button"
@@ -148,15 +154,19 @@ export default function Header() {
             </nav>
             <div className="horiz-effect-center"></div>
             <div
-                className={`pos-abs width-100ps ${downLink == true ? 'icn-item-link-op' : 'icn-item_764-svg'} grid grid-temp-clm jus-c-c align-itm-c gap-20px pad-10-24px`}>
-                {listItemLinksBacot.map((item) => {
-                    const linkActive = pathName === item.link;
-                    return (
-                        <Link key={item.id} href={item.link}
-                            className={linkActive ? 'color-blue' : ''}>{item.icon}{item.name}
-                        </Link>
-                    );
-                })}
+                className={`pos-abs width-100ps ${downLink == true ? 'icn-item-link-op visibility-visible' : 'icn-item_764-svg visibility-hide'} grid grid-temp-clm jus-c-c align-itm-c pad-14px gap-20px`}>
+                <ul className={`grid grid-temp-clm jus-c-c align-itm-c gap-20px`}>
+                    {listItemLinksBacot.map((item) => {
+                        const linkActive = pathName === item.link;
+                        return (
+                            <li
+                                key={item.id}>
+                                <Link href={item.link}
+                                    className={linkActive ? 'color-blue' : ''}>{item.icon}{item.name}
+                                </Link>
+                            </li>
+                        );
+                    })}</ul>
                 <button
                     type="button"
                     aria-label="closeLink"
@@ -172,7 +182,10 @@ export default function Header() {
                 </button>
             </div>
             <div
-                className={`pos-abs width-100ps pad-10px ${contact == true ? 'transition-op08-trans03s-ease-in-out transY-op1 z-index-1 pnt-e-visible' : 'transition-op02-trans05s-ease-in-out transY-op0-80px z-index--1 pnt-e-none'}`}>
+                className={`pos-abs width-100ps pad-10px ${contact == true
+                    ? 'transition-op08-trans03s-ease-in-out transY-op1 z-index-1 pnt-e-visible visibility-visible'
+                    : 'transition-op02-trans05s-ease-in-out transY-op0-80px z-index--1 pnt-e-none visibility-hide'}`}
+            >
                 <div className="flex flex-direc-clm jus-c-c align-itm-c margin-auto">
                     <div className="flex gap-10px">
                         {listContact.map((itm) => (
