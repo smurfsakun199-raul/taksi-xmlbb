@@ -1,6 +1,6 @@
 'use client';
 import { Library } from "lucide-react";
-import Reveal from "@/app/hooks/Reveal";
+import Reveal from "@/app/components/Reveal";
 
 export const metadata = {
     title: 'Project Web',

@@ -55,17 +55,28 @@ const listContact = [
 ];
 
 export default function Header() {
-    const [isLight, setIsLight] = useState('dark');
+    const [isLight, setIsLight] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('theme') || 'dark';
+        }
+        return 'dark';
+    });
+
+    const [mountLight, setMountLight] = useState(false);
 
     useEffect(() => {
-        const simpanTheme = localStorage.getItem('theme') || 'dark';
-        setIsLight(simpanTheme);
+        const timer = setTimeout(() => {
+            setMountLight(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {
-        document.body.classList.toggle('light', isLight === 'light');
-        localStorage.setItem('theme', isLight);
-    }, [isLight]);
+        if (mountLight) {
+            document.body.classList.toggle('light', isLight === 'light');
+            localStorage.setItem('theme', isLight);
+        }
+    }, [isLight, mountLight]);
 
     const toggleTheme = () => {
         setIsLight(prev => prev === 'dark' ? 'light' : 'dark');
@@ -94,7 +105,7 @@ export default function Header() {
                 className="pos-sticky width-100ps top pad-bl-10px pad-0-14px">
                 <div className="flex jus-c-sb align-itm-c max-w-1180px margin-auto">
                     <div className="flex jus-c-c align-itm-c gap-10px">
-                        <div className={`bg-black-in-light ${isLight === 'dark' ? 'box-sdw-0-2-6px' : 'box-sdw-0-0-4px-black-in-light'} br-radius-4px pad-2px`}>
+                        <div className={`bg-black-in-light ${mountLight && (isLight === 'dark' ? 'box-sdw-0-2-6px' : 'box-sdw-0-0-4px-black-in-light')} br-radius-4px pad-2px`}>
                             <CodeXml
                                 className="flex align-itm-c jus-c-c"
                             />
@@ -133,10 +144,9 @@ export default function Header() {
                             aria-label="Toggle Theme"
                             onClick={toggleTheme}
                             className="icn-svg-theme cursor-pnt bg-blur-card flex align-itm-fe bg-transparent br-radius-12px gap-4px">
-                            {isLight === 'light' ? (
-                                <><Sun /></>
-                            ) : (
-                                <><Moon /></>
+                            {mountLight && (isLight === 'light'
+                                ? <Sun />
+                                : <Moon />
                             )}
                         </button>
                         <button

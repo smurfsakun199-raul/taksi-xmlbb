@@ -1,7 +1,7 @@
 'use client';
 import { Accessibility, ChartPie, CircleGauge, Layers3, LucideIcon, Orbit, Sparkles, Telescope } from "lucide-react";
 import { useRef, useState } from "react";
-import Reveal from "@/app/hooks/Reveal";
+import Reveal from "@/app/components/Reveal";
 
 const score = 93.4;
 
