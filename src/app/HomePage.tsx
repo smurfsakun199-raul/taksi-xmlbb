@@ -1,5 +1,5 @@
 'use client';
-import Reveal from "@/app/hooks/Reveal";
+import Reveal from "@/app/components/Reveal";
 
 import {
     Compass,
@@ -180,7 +180,7 @@ export default function HomePage() {
                 aria-labelledby="bacot-title"
                 className="animSlideUp sec-visible pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="flex flex-direc-clm jus-c-c align-itm-c height-432px pad-top-20px gap-10px">
-                    <h1 id="bacot-title" className="font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">PortFolio</h1>
+                    <h1 id="bacot-title" className="animInfinite font-size-3rem glow-text box-sdw-0-2-6px-dark-blue">PortFolio</h1>
                     <p className="font-size-14px txt-align-c pad-btm-10px">Merepresentasikan website Portfolio yang Tolol juga sangat biasa aja</p>
                     <div className="horiz-effect-center-small"></div>
                 </div>

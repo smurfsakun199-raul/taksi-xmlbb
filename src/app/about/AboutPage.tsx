@@ -1,6 +1,6 @@
 'use client';
 import { RefreshCwOff } from "lucide-react";
-import Reveal from "@/app/hooks/Reveal";
+import Reveal from "@/app/components/Reveal";
 
 export default function About() {
 
