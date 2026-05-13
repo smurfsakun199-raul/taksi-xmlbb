@@ -139,7 +139,7 @@ const skillsBacot = [
         skr: 99.3,
         icn: '',
         skill: 'Lol Skill',
-        desc: 'Skill ga jelas,skip deskripsi Now!'
+        desc: 'Skill ga jelas,skip wkkw'
     }
 ];
 
@@ -189,7 +189,7 @@ export default function HomePage() {
                     <div className="pos-rel pad-btm-20px">
                         <div className="flex jus-c-c gap-10px pad-btm-10px">
                             <Palette />
-                            <span>Experinece Style</span>
+                            <span>Experience Style</span>
                         </div>
                         <div className="pad-btm-40px">
                             <div className="glow-w400-h100px tolol-blue-top-l-10-10ps"></div>
@@ -203,15 +203,15 @@ export default function HomePage() {
             <section aria-labelledby="info-bacot" className="sec-visible-auto pos-rel pad-bl-20px pad-top-48px pad-0-14px">
                 <div className="horiz-effect-right"></div>
                 <div className="reveal pad-top-100px pad-btm-40px">
-                    <h2 className="font-size-24px txt-align-c pad-btm-40px">Bahasa pemrograman apa yang digunakan oleh Author yang ga jelas ini?</h2>
+                    <h2 id="info-bacot" className="font-size-24px txt-align-c pad-btm-40px">Bahasa pemrograman apa yang digunakan oleh Author yang ga jelas ini?</h2>
                     <div className="flex pad-top-10px pad-btm-20px">
                         <div className="pad-4-18px br-op br-radius-12px bg-dark-to-light">
-                            <span id="info-bacot" className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</span>
+                            <span className="font-size-16px flex align-itm-c gap-10px"><Code /> Code</span>
                         </div>
                     </div>
                     <div className="pos-rel grid grid-temp-clm-r3 jus-c-c align-itm-inherit gap-20px">
                         {listYear.map((item) => (
-                            <div key={item.id} className={`card-hover ${classBgCardId(item.id)}`}>
+                            <div key={item.id} className={`reveal card-hover ${classBgCardId(item.id)}`}>
                                 <div className="flex align-itm-c pad-btm-10px gap-10px">
                                     {item.title}
                                     <span className={`font-size-12px ${classColor(item.id)}`}>{item.name}</span>
@@ -239,7 +239,7 @@ export default function HomePage() {
                     </div>
                     <div className="grid grid-temp-clm-r2 jus-c-c align-itm-c gap-24px">
                         {listTools.map((itm) => (
-                            <div key={itm.id} className={`card-hover ${classBgCardId(itm.id)}`}>
+                            <div key={itm.id} className={`reveal card-hover ${classBgCardId(itm.id)}`}>
                                 <span className="font-size-18px">
                                     {itm.category}
                                 </span>
@@ -317,7 +317,7 @@ export default function HomePage() {
                         </div>
                         <div className="flex-mx-764px-dir-clm gap-20px">
                             {roadLol.map((item) => (
-                                <div key={item.id} className="card grid align-itm-inherit bg-dark-to-light">
+                                <div key={item.id} className="reveal card grid align-itm-inherit bg-dark-to-light">
                                     <div className="flex jus-c-sb align-itm-c pad-btm-10px gap-10px">
                                         <h4 className="font-size-14px color-white-op">{item.years}</h4>
                                         <span className="font-size-14px color-white-op">{item.month}</span>
@@ -355,7 +355,7 @@ export default function HomePage() {
                         </div>
                         <div className="grid grid-temp-clm-r4 jus-c-c gap-20px">
                             {skillsBacot.map((item) => (
-                                <div key={item.id} className={`card-hover ${classBgCardId(item.id)}`}>
+                                <div key={item.id} className={`reveal card-hover ${classBgCardId(item.id)}`}>
                                     <div className="flex jus-c-sb gap-20px pad-btm-20px">
                                         <h2 className="font-size-16px">{item.skill}</h2>
                                         <strong className="flex jus-c-c align-itm-c gap-10px font-size-14px"><Star className="width-18px height-18px" />{item.skr}</strong>

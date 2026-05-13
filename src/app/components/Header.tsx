@@ -94,7 +94,7 @@ export default function Header() {
                 className="pos-sticky width-100ps top pad-bl-10px pad-0-14px">
                 <div className="flex jus-c-sb align-itm-c max-w-1180px margin-auto">
                     <div className="flex jus-c-c align-itm-c gap-10px">
-                        <div className={`bg-black-in-light ${isLight === 'dark' ? 'box-sdw-0-2-6px' : 'box-sdw-0-0-4px-black-in-light'} br-radius-4px pad-2px`}>
+                        <div className={`icn-author bg-black-in-light ${isLight === 'dark' ? 'box-sdw-0-2-6px' : 'box-sdw-0-0-4px-black-in-light'} br-radius-4px pad-2px`}>
                             <CodeXml
                                 className="flex align-itm-c jus-c-c"
                             />
@@ -132,11 +132,11 @@ export default function Header() {
                             type="button"
                             aria-label="Toggle Theme"
                             onClick={toggleTheme}
-                            className="icn-svg-theme cursor-pnt bg-blur-card flex align-itm-fe bg-transparent br-radius-12px gap-4px">
+                            className="theme icn-svg-theme cursor-pnt bg-blur-card flex align-itm-fe bg-transparent br-radius-12px gap-4px">
                             {isLight === 'light' ? (
-                                <><Sun /></>
+                                <Sun />
                             ) : (
-                                <><Moon /></>
+                                <Moon />
                             )}
                         </button>
                         <button
@@ -225,7 +225,7 @@ export default function Header() {
                     type="button"
                     className="bg-transparent cursor-pnt"
                     aria-label="UpToNavigation">
-                    <ArrowUp />
+                    <ArrowUp className="roket br-radius-50ps" />
                 </button>
             </div>
         </header>
