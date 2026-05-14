@@ -343,7 +343,7 @@ body.light {
 
   .sec-visible-auto {
     content-visibility: auto;
-    contain-intrinsic-size: auto 500px;;
+    contain-intrinsic-size: auto 500px;
   }
 
   /* --- Custom Style --- */
@@ -1734,4 +1734,4 @@ body.light {
   to {
     opacity: 1;
   }
-}
+}}
