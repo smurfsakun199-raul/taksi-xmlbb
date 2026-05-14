@@ -172,7 +172,7 @@ const classColor = (id: number) => {
 
 export default function HomePage() {
     // Reveal Tag
-    Reveal();
+    
 
     return (
         <main className="max-w-1210px margin-auto">
@@ -254,7 +254,7 @@ export default function HomePage() {
                     <div className="pad-btm-40px">
                         <h2 className="font-size-24px txt-align-c">Daya tarik apa yang membuat website ini sangat Tolol?</h2>
                     </div>
-                    <div className="reveal">
+                    <div className="">
                         <div className="pos-rel card-hover-dig-to-left bg-dark-to-light">
                             <div className="flex jus-c-sb align-itm-c gap-10px pad-btm-10px">
                                 <div className="icn-circle-svg flex gap-10px">
