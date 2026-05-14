@@ -1,5 +1,4 @@
 'use client';
-import Reveal from "@/app/hooks/Reveal";
 
 import {
     Compass,
