@@ -344,6 +344,7 @@ body.light {
   .sec-visible-auto {
     content-visibility: auto;
     contain-intrinsic-size: auto 500px;
+    contain-intrinsic-block-size: auto 500px;
   }
 
   /* --- Custom Style --- */
