@@ -1461,7 +1461,7 @@ body.light {
   .reveal {
     opacity: 0;
     transform: translateY(50px);
-    transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95), opacity 1.5s linear;
+    transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95), opacity 1.5s linear, box-shadow 0.3s ease-in-out;
   }
 
   .reveal.rev {

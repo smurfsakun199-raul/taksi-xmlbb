@@ -8,9 +8,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
+  variable: "--font-inter",
+  display: "swap",
+  subsets: ["latin"],
 });
 
 const geistSans = Geist({
@@ -51,11 +51,11 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full">
+        <SpeedInsights />
         <HeaderTolol />
         {children}
-        <SpeedInsights />
+        <FooterTolol />        
         <Analytics />
-        <FooterTolol />
       </body>
     </html>
   );

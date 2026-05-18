@@ -236,7 +236,7 @@ export default function HomePage() {
                             <span className="font-size-16px flex align-itm-c gap-10px"><Wrench /> Tools</span>
                         </div>
                     </div>
-                    <div className="grid grid-temp-clm-r2 jus-c-c align-itm-c gap-24px">
+                    <div className="grid grid-temp-clm-r2 jus-c-c align-itm-inherit gap-24px">
                         {listTools.map((itm) => (
                             <div key={itm.id} className={`reveal card-hover ${classBgCardId(itm.id)}`}>
                                 <span className="font-size-18px">
