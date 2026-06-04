@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 
 import HeaderTolol from "@/app/components/Header";
 import FooterTolol from "@/app/components/Footer";
@@ -55,13 +54,11 @@ export default function RootLayout({
         <SpeedInsights />
         <HeaderTolol />
         {children}
-        <Script
+        <script
           src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"
-          strategy="afterInteractive"
         />
-        <Script
-          src="https://files.bpcontent.cloud/2026/05/25/16/20260525160900-2U3KAYHP.js"
-          strategy="lazyOnload"
+        <script
+          src="https://files.bpcontent.cloud/2026/05/25/16/20260525160900-2U3KAYHP.js" defer
         />
         <FooterTolol />
         <Analytics />
