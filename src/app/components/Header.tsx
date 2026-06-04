@@ -96,7 +96,7 @@ export default function Header() {
                     <div className="flex jus-c-c align-itm-c gap-10px">
                         <div className={`icn-author bg-black-in-light ${isLight === 'dark' ? 'box-sdw-0-2-6px' : 'box-sdw-0-0-4px-black-in-light'} br-radius-4px pad-2px`}>
                             <CodeXml
-                                className="flex align-itm-c jus-c-c"
+                                className={`flex align-itm-c jus-c-c`}
                             />
                         </div>
                         <div className="flex flex-direc-clm">
@@ -220,7 +220,7 @@ export default function Header() {
             </div>
             <div
                 onClick={() => scrollToId('nav')}
-                className="pos-fix pad-10px br-radius-50ps bottom-4ps right-2ps z-index-1">
+                className="pos-fix pad-10px br-radius-50ps bottom-4ps left-2ps z-index-1">
                 <button
                     type="button"
                     className="bg-transparent cursor-pnt"

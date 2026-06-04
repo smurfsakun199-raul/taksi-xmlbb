@@ -142,6 +142,10 @@ body {
   animation: logo 20s linear infinite;
 }
 
+.sec_Auto {
+  content-visibility: auto;
+}
+
 body.light {
   --bg: white;
   --bg-toggle-body: white;

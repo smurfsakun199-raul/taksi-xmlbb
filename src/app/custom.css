@@ -1,0 +1,870 @@
+/* ==========================================================================
+   1. VARIABLES & RESET (:root)
+   ========================================================================== */
+:root {
+    /* Colors */
+    --bg_main: #ffffff;
+    --bg_sub: #f8fafc;
+    --text_main: #0f172a;
+    --text_sub: #64748b;
+    --primary: #3b82f6;
+    --primary_hover: #1d4ed8;
+    --accent: #f59e0b;
+    --border_color: #e2e8f0;
+
+    /* Borders & Shadows */
+    --radius_sm: 4px;
+    --radius_md: 8px;
+    --radius_lg: 12px;
+    --shadow_sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow_md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset Dasar Next.js */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg_main);
+    color: var(--text_main);
+    font-family: sans-serif;
+}
+
+/* Base Class */
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ==========================================================================
+   2. UTILITY CLASSES (Menggunakan Underscore)
+   ========================================================================== */
+
+
+/* ==========================================================================
+    UTILITY CLASSES (Typography - REM Version)
+   ========================================================================== */
+
+
+@layer secondary {
+
+    /* Optimisasi */
+
+    .sec-visible-auto {
+        content-visibility: auto;
+        contain-intrinsic-size: auto;
+        contain-intrinsic-block-size: auto;
+    }
+
+    /* Font Sizes (Konversi 10px - 80px) */
+    .text_10 {
+        font-size: 0.625rem;
+    }
+
+    /* 10px */
+    .text_12 {
+        font-size: 0.75rem;
+    }
+
+    /* 12px */
+    .text_14 {
+        font-size: 0.875rem;
+    }
+
+    /* 14px */
+    .text_16 {
+        font-size: 1rem;
+    }
+
+    /* 16px (Base) */
+    .text_18 {
+        font-size: 1.125rem;
+    }
+
+    /* 18px */
+    .text_20 {
+        font-size: 1.25rem;
+    }
+
+    /* 20px */
+    .text_24 {
+        font-size: 1.5rem;
+    }
+
+    /* 24px */
+    .text_28 {
+        font-size: 1.75rem;
+    }
+
+    /* 28px */
+    .text_32 {
+        font-size: 2rem;
+    }
+
+    /* 32px */
+    .text_36 {
+        font-size: 2.25rem;
+    }
+
+    /* 36px */
+    .text_40 {
+        font-size: 2.5rem;
+    }
+
+    /* 40px */
+    .text_48 {
+        font-size: 3rem;
+    }
+
+    /* 48px */
+    .text_56 {
+        font-size: 3.5rem;
+    }
+
+    /* 56px */
+    .text_64 {
+        font-size: 4rem;
+    }
+
+    /* 64px */
+    .text_72 {
+        font-size: 4.5rem;
+    }
+
+    /* 72px */
+    .text_80 {
+        font-size: 5rem;
+    }
+
+    /* 80px */
+
+    /* Font Weights */
+    .fw_normal {
+        font-weight: 400;
+    }
+
+    .fw_medium {
+        font-weight: 500;
+    }
+
+    .fw_semibold {
+        font-weight: 600;
+    }
+
+    .fw_bold {
+        font-weight: 700;
+    }
+
+    /* Alignment & Helpers */
+    .text_center {
+        text-align: center;
+    }
+
+    .text_left {
+        text-align: left;
+    }
+
+    .text_right {
+        text-align: right;
+    }
+
+    .text_muted {
+        color: var(--text_sub);
+    }
+
+    .line_height_tight {
+        line-height: 1.25;
+    }
+
+    /* Buat judul besar biar ga renggang */
+    .line_height_base {
+        line-height: 1.5;
+    }
+
+    /* Buat paragraf biasa */
+
+    /* Layout & Flexbox */
+
+    .flex {
+        display: flex;
+    }
+
+    .flex_row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex_col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex_wrap {
+        flex-wrap: wrap;
+    }
+
+    .flex_center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Justify & Align */
+    .jc_start {
+        justify-content: flex-start;
+    }
+
+    .jc_center {
+        justify-content: center;
+    }
+
+    .jc_end {
+        justify-content: flex-end;
+    }
+
+    .jc_between {
+        justify-content: space-between;
+    }
+
+    .ai_start {
+        align-items: flex-start;
+    }
+
+    .ai_center {
+        align-items: center;
+    }
+
+    .ai_end {
+        align-items: flex-end;
+    }
+
+    .ai-inherit {
+        align-items: inherit;
+    }
+
+    /* Grid (Sering buat layout card) */
+
+    .grid {
+        display: grid;
+    }
+
+    .grid_2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid_3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid_4 {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* Gaps (Jarak antar elemen flex/grid) */
+    .gap_xs {
+        gap: 4px;
+    }
+
+    .gap_sm {
+        gap: 8px;
+    }
+
+    .gap_md {
+        gap: 16px;
+    }
+
+    .gap_lg {
+        gap: 24px;
+    }
+
+    .gap_xl {
+        gap: 32px;
+    }
+
+    /* Spacing: Padding & Margin (Sering digunain) */
+    .p_sm {
+        padding: 8px;
+    }
+
+    .p_md {
+        padding: 16px;
+    }
+
+    .p_lg {
+        padding: 24px;
+    }
+
+    .m_sm {
+        margin: 8px;
+    }
+
+    .m_md {
+        margin: 16px;
+    }
+
+    .m_lg {
+        margin: 24px;
+    }
+
+    .m_auto {
+        margin: 0 auto;
+    }
+
+    /* Buat nengahin container */
+
+
+    /* Width & Height */
+
+    /* ==========================================================================
+       9. DIMENSIONS (Width, Height, Max-Width, & Min-Height)
+       ========================================================================== */
+
+    /* Max Width Containers (1200px - 1300px) */
+    .max_w_1200 {
+        max-width: 75rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* 1200px */
+    .max_w_1240 {
+        max-width: 77.5rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* 1240px */
+    .max_w_1280 {
+        max-width: 80rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* 1280px */
+    .max_w_1300 {
+        max-width: 81.25rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* 1300px */
+
+    /* Width (Persentase & Viewport) */
+    .w_10 {
+        width: 10%;
+    }
+
+    .w_25 {
+        width: 25%;
+    }
+
+    .w_33 {
+        width: 33.333%;
+    }
+
+    .w_50 {
+        width: 50%;
+    }
+
+    .w_75 {
+        width: 75%;
+    }
+
+    .w_full {
+        width: 100%;
+    }
+
+    .w_screen {
+        width: 100vw;
+    }
+
+    .w_auto {
+        width: auto;
+    }
+
+    /* Height (Persentase & Viewport) */
+    .h_25 {
+        height: 25%;
+    }
+
+    .h_50 {
+        height: 50%;
+    }
+
+    .h_75 {
+        height: 75%;
+    }
+
+    .h_full {
+        height: 100%;
+    }
+
+    .h_screen {
+        height: 100vh;
+    }
+
+    .h_auto {
+        height: auto;
+    }
+
+    /* Min Height (Sering buat mastiin halaman / card gak kekecilan) */
+    .min_h_100 {
+        min-height: 6.25rem;
+    }
+
+    /* 100px */
+    .min_h_200 {
+        min-height: 12.5rem;
+    }
+
+    /* 200px */
+    .min_h_300 {
+        min-height: 18.75rem;
+    }
+
+    /* 300px */
+    .min_h_400 {
+        min-height: 25rem;
+    }
+
+    /* 400px */
+    .min_h_500 {
+        min-height: 31.25rem;
+    }
+
+    /* 500px */
+    .min_h_screen {
+        min-height: 100vh;
+    }
+
+    .min-h-full {
+        min-height: 100%;
+    }
+
+    /* Full satu layar HP/Laptop */
+
+    .container_center {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    /* Borders, Radii, & Shadows */
+    .border_main {
+        border: 1px solid var(--border_color);
+    }
+
+    .radius_sm {
+        border-radius: var(--radius_sm);
+    }
+
+    .radius_md {
+        border-radius: var(--radius_md);
+    }
+
+    .radius_lg {
+        border-radius: var(--radius_lg);
+    }
+
+    .radius_full {
+        border-radius: 9999px;
+    }
+
+    .shadow_sm {
+        box-shadow: var(--shadow_sm);
+    }
+
+    .shadow_md {
+        box-shadow: var(--shadow_md);
+    }
+
+    /* ==========================================================================
+   3. SPACING (Padding, Margin, & Gap - REM Version)
+   ========================================================================== */
+
+    /* Padding All Sides */
+    .p_4 {
+        padding: 0.25rem;
+    }
+
+    /* 4px */
+    .p_8 {
+        padding: 0.5rem;
+    }
+
+    /* 8px */
+    .p_12 {
+        padding: 0.75rem;
+    }
+
+    /* 12px */
+    .p_16 {
+        padding: 1rem;
+    }
+
+    /* 16px */
+    .p_20 {
+        padding: 1.25rem;
+    }
+
+    /* 20px */
+    .p_24 {
+        padding: 1.5rem;
+    }
+
+    /* 24px */
+    .p_32 {
+        padding: 2rem;
+    }
+
+    /* 32px */
+    .p_40 {
+        padding: 2.5rem;
+    }
+
+    /* 40px */
+    .p_48 {
+        padding: 3rem;
+    }
+
+    /* 48px */
+
+    /* Padding X (Left & Right) */
+    .px_4 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+
+    .px_8 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .px_12 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .px_16 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .px_24 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .px_32 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    /* Padding Y (Top & Bottom) */
+    .py_4 {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .py_8 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .py_12 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .py_16 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .py_24 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .py_32 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* Margin All Sides */
+    .m_4 {
+        margin: 0.25rem;
+    }
+
+    .m_8 {
+        margin: 0.5rem;
+    }
+
+    .m_16 {
+        margin: 1rem;
+    }
+
+    .m_24 {
+        margin: 1.5rem;
+    }
+
+    .m_32 {
+        margin: 2rem;
+    }
+
+    .m_auto {
+        margin: 0 auto;
+    }
+
+    /* Margin Bottom (Paling sering dipake buat jarak antar paragraf/section) */
+    .mb_4 {
+        margin-bottom: 0.25rem;
+    }
+
+    .mb_8 {
+        margin-bottom: 0.5rem;
+    }
+
+    .mb_12 {
+        margin-bottom: 0.75rem;
+    }
+
+    .mb_16 {
+        margin-bottom: 1rem;
+    }
+
+    .mb_24 {
+        margin-bottom: 1.5rem;
+    }
+
+    .mb_32 {
+        margin-bottom: 2rem;
+    }
+
+    .mb_48 {
+        margin-bottom: 3rem;
+    }
+
+    /* Gaps (Jarak antar item di Flexbox / Grid) */
+    .gap_4 {
+        gap: 0.25rem;
+    }
+
+    .gap_8 {
+        gap: 0.5rem;
+    }
+
+    .gap_12 {
+        gap: 0.75rem;
+    }
+
+    .gap_16 {
+        gap: 1rem;
+    }
+
+    .gap_24 {
+        gap: 1.5rem;
+    }
+
+    .gap_32 {
+        gap: 2rem;
+    }
+
+    .gap_48 {
+        gap: 3rem;
+    }
+
+    /* ==========================================================================
+   4. RESPONSIVE GRID (Otomatis Rapih Tanpa Media Query di Komponen)
+   ========================================================================== */
+
+    /* Grid ini otomatis nyesuaiin ukuran layar. 
+   Layar HP = otomatis 1 kolom, Layar Tablet/PC = otomatis nyesuaiin batas minimal px */
+
+    .grid_auto_sm {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    /* Cocok buat menu icon kecil / tag */
+
+    .grid_auto_md {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Paling pas buat Card Produk / Artikel */
+
+    .grid_auto_lg {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    /* Buat layout section yang lebih besar */
+
+    /* Background Warna Solid (Ngambil dari :root variabel) */
+    .bg_main {
+        background-color: var(--bg_main);
+    }
+
+    .bg_sub {
+        background-color: var(--bg_sub);
+    }
+
+    .bg_primary {
+        background-color: var(--primary);
+        color: white;
+    }
+
+    .bg_accent {
+        background-color: var(--accent);
+        color: white;
+    }
+
+    /* Background Semi-Transparan (Bagus buat overlay/modal/navbar) */
+    .bg_white_50 {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .bg_white_80 {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .bg_black_50 {
+        background-color: rgba(15, 23, 42, 0.5);
+    }
+
+    /* Mengikuti warna teks dark mode */
+    .bg_black_80 {
+        background-color: rgba(15, 23, 42, 0.8);
+    }
+
+    /* Gradasi Warna Estetik (Bikin web keliatan modern) */
+    .bg_grad_primary {
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        color: white;
+    }
+
+    /* Biru ke Ungu */
+
+    .bg_grad_dark {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: white;
+    }
+
+    /* Dark Mode Mesh */
+
+    .bg_grad_sunset {
+        background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+        color: white;
+    }
+
+    /* Oranye ke Merah */
+
+
+    /* BONUS: EFEK FAKE BLUR / GLASSMORPHISM (Super Ringan, Gak Bikin Lag) 
+   Triknya: Pakai background transparan + kombinasi bayangan halus (box-shadow) 
+   tanpa menyentuh properti backdrop-filter sama sekali! */
+
+    .bg_fake_blur {
+        background-color: rgba(255, 255, 255, 0.75);
+        box-shadow:
+            0 4px 30px rgba(0, 0, 0, 0.03),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+        /* Efek garis kaca di tepian */
+    }
+
+    /* Components Utilities (Tombol & Card Instan) */
+    .btn_primary {
+        background-color: var(--primary);
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: var(--radius_md);
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .btn_primary:hover {
+        background-color: var(--primary_hover);
+    }
+
+    /* ==========================================================================
+       8. CARD COMPONENTS (REM & Minimalist Border)
+       ========================================================================== */
+
+    /* Card Standar (Kalem dan Statis) */
+    .card {
+        background-color: var(--bg_sub);
+        border: 0.0625rem solid var(--border_color);
+        /* Border tipis 1px murni rem */
+        border-radius: 0.5rem;
+        /* 8px radius */
+        padding: 1.5rem;
+        /* 24px padding biar lega */
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+        /* Shadow tipis banget */
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    /* Card Interaktif (Bisa melayang pas disentuh mouse) */
+    .card_hover {
+        background-color: var(--bg_sub);
+        border: 0.0625rem solid var(--border_color);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        /* Animasi transisi biar pas di-hover jalannya smooth */
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    /* Efek pas mouse masuk ke card_hover */
+    .card_hover:hover {
+        transform: translateY(-0.25rem);
+        /* NAIK K ATAS 4px pake rem */
+        border-color: var(--primary);
+        /* Bordernya otomatis berubah sewarna primary */
+        box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+        /* Bayangannya menebal pas melayang */
+    }
+
+    /* Efek pas diklik (Ada sensasi mendem dikit) */
+    .card_hover:active {
+        transform: translateY(-0.0625rem) scale(0.99);
+    }
+
+    .card_main {
+        background-color: var(--bg_sub);
+        border: 1px solid var(--border_color);
+        border-radius: var(--radius_lg);
+        padding: 16px;
+        box-shadow: var(--shadow_sm);
+    }
+
+    /* Visibility (Sering buat animasi/toggle modal) */
+    .v_hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .v_visible {
+        visibility: visible;
+        opacity: 1;
+    }
+}
