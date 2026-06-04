@@ -61,7 +61,7 @@ export default function RootLayout({
         />
         <Script
           src="https://files.bpcontent.cloud/2026/05/25/16/20260525160900-2U3KAYHP.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <FooterTolol />
         <Analytics />
